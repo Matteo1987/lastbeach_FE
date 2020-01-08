@@ -30,11 +30,6 @@ div .rounded-circle p {
   background-color:#e5f2f7
 }
 
-.card-img-cropped{
-  object-fit: cover;
-  width: 100%;
-  height: 15vw;
-}
 
 .cursor-pointer {
   cursor: pointer;
@@ -83,101 +78,6 @@ background-position: center;
   font-size: 20px;
 }
 
-
-.footer .col {
-  width: 190px;
-  height: auto;
-  float: left;
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  padding: 0px 0px 0px 0px;
-}
-.footer .col h1 {
-  margin: 0;
-  padding: 0;
-  font-family: inherit;
-  font-size: 15px;
-  line-height: 17px;
-  padding: 5px 0px 3px 0px;
-  color:grey;
-  font-weight: normal;
-  text-transform: uppercase;
-  letter-spacing: 0.250em;
-}
-.footer .col ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-.footer .col ul li {
-  color:grey;
-  font-size: 12px;
-  font-family: inherit;
-  font-weight: bold;
-  padding: 0px 0px 5px 0px;
-  cursor: pointer;
-  transition: .2s;
-  -webkit-transition: .2s;
-  -moz-transition: .2s;
-}
-.social ul li {
-  display: inline-block;
-  padding-right: 20px !important;
-}
-
-.footer .col ul li:hover {
-  color:rgb(103, 187, 235) ;
-  transition: .1s;
-  -webkit-transition: .1s;
-  -moz-transition: .1s;
-}
-.clearfix {
-  clear: both;
-}
-@media only screen and (min-width: 1280px) {
-  .contain {
-    width: 1200px;
-    margin: 0 auto;
-  }
-}
-@media only screen and (max-width: 1139px) {
-  .contain .social {
-    width: 1000px;
-    display: block;
-  }
-  .social h1 {
-    margin: 0px;
-  }
-}
-@media only screen and (max-width: 950px) {
-  .footer .col {
-    width: 33%;
-  }
-  .footer .col h1 {
-    font-size: 1px;
-  }
-  .footer .col ul li {
-    font-size: 10px;
-  }
-}
-@media only screen and (max-width: 500px) {
-    .footer .col {
-      width: 50%;
-    }
-    .footer .col h1 {
-      font-size: 14px;
-    }
-    .footer .col ul li {
-      font-size: 13px;
-    }
-}
-@media only screen and (max-width: 340px) {
-  .footer .col {
-    width: 100%;
-  }
-}
-
 h2{
   color:grey;
   font-size: 14px;
@@ -187,31 +87,27 @@ h2{
 
 }
 
-.esplora {
-color: #e7e7d3;
-}
-.aggiungispiaggia{
-  color: #e7e7d3;
-  }
-
 .crop {
-    width: 300px;
-    height: 88%;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
 }
 
 .crop img {
     width: 400px;
-    height: 300px;
+    height: 222px;
     margin: -75px 0 0 -100px;
 }
 
 #image {
   background: url(https://it.sailsquare.com/blog/app/uploads/sites/3/2017/04/Cala-Coticcio-Caprera-1-e1492522465771-2400x1056.jpg) no-repeat;
   height: 500px;
-  background-position: center;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
   text-align: center;
   padding-top: 250px;
   color: white;
   background-attachment: fixed;
 }
+  

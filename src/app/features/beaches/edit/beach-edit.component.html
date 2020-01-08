@@ -1,15 +1,15 @@
 
   <div class="container mt-5">
-    <div class="col-md">
-      <form class="card p-3" [formGroup]="beachForm" (ngSubmit)="editBeach()">
-        <h4 class="my-4">
+    <div class="col">
+      <form class="card p-5" [formGroup]="beachForm" (ngSubmit)="editBeach()">
+        <div class="row">
+        <h4>
           <a [routerLink]="['../../']">
-            <i class="fas fa-arrow-circle-left"></i>
+            <i class="fas fa-arrow-left mr-3"></i>
           </a>
-          Indietro
         </h4>
-      <h3> Modifica spiaggia di  {{beach.name}}</h3>
-
+        <h3> Modifica spiaggia di  {{beach.name}}</h3>
+      </div>
 
         <!-- Name and province -->
         <div class="form-row">
