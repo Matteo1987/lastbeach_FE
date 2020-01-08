@@ -2,7 +2,7 @@
   <h1>Le Migliori Spiagge</h1>
 </div>
 
-<div class="container rounded mt-5 p-5 mb-5" style="background-color:rgba(255, 255, 255, 0.5);">
+<div class="container rounded mt-5 p-5 mb-5 shadow-lg" style="background-color:rgba(255, 255, 255, 0.8);">
 
   <div class="row">
   
@@ -43,7 +43,7 @@
 
     <div class="row align-items-start px-4" style="margin-bottom: 20px;">
     
-    <div *ngFor="let beach of beaches.slice(0, 10)" class="card cursor-pointer w-100 mt-2" (click)="goToDetails(beach.id)">
+    <div *ngFor="let beach of beaches.slice(0, 10)" class="card cursor-pointer w-100 mt-2 border shadow" (click)="goToDetails(beach.id)">
             
       <div>
         <img class="card-img-top" src="{{beach.photo}}" alt="{{ beach.name }}" style="object-fit: cover; height: 20vh;">
