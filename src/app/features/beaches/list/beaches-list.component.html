@@ -30,10 +30,10 @@
     <div class="row" style="margin-bottom: 20px;">
     
           <div *ngFor="let beach of beaches.slice(0, 10)" class="card cursor-pointer" style="width: 75%; height: 200px;" (click)="goToDetails(beach.id)">
-            <div class="row rounded mr-1">
+            <div class="row rounded-lg mr-1">
 
               <div class="col">
-                <div class="crop rounded">
+                <div class="crop rounded-lg">
                 <img src="{{beach.photo}}" alt="{{ beach.name }}" class="card-img card-img-cropped" id="foto">
                  </div>  
               </div>
