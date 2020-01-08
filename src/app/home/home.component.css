@@ -21,8 +21,9 @@ h2{
 
 }
 
+
 #textContainer{
-  padding-top: 20%;
+  padding-top: 10%;
 }
 
 .esplora {
@@ -35,12 +36,81 @@ color: #e7e7d3;
 
 #beachadvisor{
     color: white;
-    font-size: 500%;
+    font-size: 700%;
     text-align: center;
+    padding-top: 10px;
+    text-shadow: 0.5px 0.5px 5px rgb(43, 41, 41);
+    
+  }
+
+  #sport{
+    padding: 10px;
+    width: 15px;
+    text-shadow: 0.5px 0.5px 5px rgb(43, 41, 41);
+  }
+  #divertimento{
+    padding: 10px;
+    width: 15px;
+    text-shadow: 0.5px 0.5px 5px rgb(43, 41, 41);
+  }
+  #family{
+    padding: 10px;
+    width: 15px;
+    text-shadow: 0.5px 0.5px 5px rgb(43, 41, 41);
+
+  }
+
+  #typeBeaches{
+    max-width: 20%;
+    padding-top: 180px;
   }
 
   #clicka{
     color: white;
     font-size: 200%;
     text-align: center;
+    text-shadow: 0.5px 0.5px 5px rgb(43, 41, 41);
+    
+  }
+
+  .button {
+    
+    border-radius: 4px;
+    background-color: transparent;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 48px;
+    padding: 10px;
+    width: 15px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    padding-top: 10%;
+    padding-left: 15%;
+  }
+  
+  .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .button:hover span {
+    padding-right: 25px;
+  }
+  
+  .button:hover span:after {
+    opacity: 1;
+    right: 0;
   }
