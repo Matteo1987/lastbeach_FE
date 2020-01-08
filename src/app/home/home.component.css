@@ -1,0 +1,46 @@
+
+.bg-img{
+  min-height: 100vh;
+  height: 80%;
+ width: 100%;
+ background: url("https://www.touringclub.it/sites/default/files/immagini_georiferite/cala_luna.jpg") no-repeat center center fixed;
+ -webkit-background-size: cover;
+ -moz-background-size: cover;
+ -o-background-size: cover;
+ background-size: cover;
+ background-attachment: initial;
+background-position: center top;
+ }
+
+h2{
+  color:grey;
+  font-size: 14px;
+  font-family: inherit;
+  font-weight: bold;
+  padding: 5px 0px 5px 0px;
+
+}
+
+#textContainer{
+  padding-top: 20%;
+}
+
+.esplora {
+color: #e7e7d3;
+}
+
+.aggiungispiaggia{
+  color: #e7e7d3;
+  }
+
+#beachadvisor{
+    color: white;
+    font-size: 500%;
+    text-align: center;
+  }
+
+  #clicka{
+    color: white;
+    font-size: 200%;
+    text-align: center;
+  }

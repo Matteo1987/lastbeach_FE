@@ -1,0 +1,60 @@
+
+<div class="container rounded mt-5" style="background-color:rgba(255, 255, 255, 0.5);">
+  <hr>
+  <div>
+    <div *ngIf="loaded" class="order-list my-3 text-right">
+      <h4 class="d-inline-block mr-2 mt-3">Ordina per: </h4>
+      <form (change)="radioChange()">
+        <div class="custom-control custom-radio custom-control-inline">
+          <input type="radio" id="park" name="radio" class="custom-control-input" value="park" [(ngModel)]="radioValue">
+          <label class="custom-control-label" for="park">Parcheggio</label>
+        </div>
+        <div class="custom-control custom-radio custom-control-inline">
+          <input type="radio" id="summer_crowding" name="radio" class="custom-control-input" value="summer_crowding"
+            [(ngModel)]="radioValue">
+          <label class="custom-control-label" for="summer_crowding">Affollamento</label>
+        </div>
+
+        <!--      <div class="custom-control custom-radio custom-control-inline">-->
+        <!--        <input type="radio" id="traffic" name="radio" class="custom-control-input" value="traffic" [(ngModel)]="radioValue">-->
+        <!--        <label class="custom-control-label" for="traffic">Traffico</label>-->
+        <!--      </div>-->
+        <div class="custom-control custom-radio custom-control-inline">
+          <input type="radio" id="weather" name="radio" class="custom-control-input" value="weather"
+            [(ngModel)]="radioValue">
+          <label class="custom-control-label" for="weather">Meteo</label>
+        </div>
+      </form>
+    </div>
+
+    <div class="row" style="margin-bottom: 20px;">
+    
+          <div *ngFor="let beach of beaches.slice(0, 10)" class="card cursor-pointer" style="width: 75%; height: 200px;" (click)="goToDetails(beach.id)">
+            <div class="row rounded mr-1">
+
+              <div class="col">
+                <div class="crop rounded">
+                <img src="{{beach.photo}}" alt="{{ beach.name }}" class="card-img card-img-cropped" id="foto">
+                 </div>  
+              </div>
+              <div class="col my-5">
+                <div class="card-body">
+                  <h5 class="card-title">{{ beach.name }}</h5>
+                  <p class="card-text">{{ beach.city + ' (' + beach.province + ')' }}</p>
+                </div>
+              </div>
+              <div class="col my-5">
+                <div class="weather-icon"><img [src]="beach.weatherIcon" alt="meteo"></div>
+              </div>
+            </div>
+          </div>
+       
+    </div>
+
+    <h3 *ngIf="loaded && beaches.length === 0">Non ci sono ancora spiagge! Provvedi ad aggiungerne.</h3>
+
+    <h3 *ngIf="!loaded">Loading...</h3>
+  </div>
+
+</div>
+

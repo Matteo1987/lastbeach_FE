@@ -1,0 +1,91 @@
+.weather-icon {
+  width: 50px;
+  height: 50px;
+}
+
+div .rounded-circle {
+  width: 25px;
+  height: 25px;
+}
+
+div .rounded-circle p {
+  margin-left: 3px;
+  color: white;
+  font-weight: bold;
+}
+
+img {
+  border-radius: 5px;
+}
+
+#map{
+  width: 100%;
+  height: 85%;
+}
+
+#goMap{
+  float: right;
+  padding-right: 10px;
+}
+
+#edit{
+  float: left;
+}
+
+#delete{
+  float: left;
+}
+
+.container{
+  width: 100%;
+}
+
+.navbar-brand{
+  width: 1350px;
+  left: 15px;
+  font-size: 30px;
+  padding-bottom: 5px;
+  height: 25px;
+}
+
+.p{
+  font-size: 20px;
+}
+
+h1{
+  font-size: 25px;
+  padding-left: 1530px;
+}
+h3{
+  font-size: 25px;
+  padding-left: 15px;
+}
+
+.nav-item{
+  font-size: 20px;
+}
+
+.esplora {
+color: #e7e7d3;
+}
+.aggiungispiaggia{
+  color: #e7e7d3;
+  }
+
+img{
+  object-fit: cover;
+}
+
+#foto{
+   width: 103%;
+   position: relative;
+}
+
+#foto img{
+  width: 95%;
+  height: 400px;
+}
+
+.cropped {
+  object-fit: cover;
+}
