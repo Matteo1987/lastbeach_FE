@@ -41,29 +41,24 @@
       </form>
     </div>
 
-    <div class="row align-items-start" style="margin-bottom: 20px;">
+    <div class="row align-items-start px-4" style="margin-bottom: 20px;">
     
-          <div *ngFor="let beach of beaches.slice(0, 10)" class="card cursor-pointer w-100 mt-2" style="height: 150px;" (click)="goToDetails(beach.id)">
+    <div *ngFor="let beach of beaches.slice(0, 10)" class="card cursor-pointer w-100 mt-2" (click)="goToDetails(beach.id)">
+            
+      <div>
+        <img class="card-img-top" src="{{beach.photo}}" alt="{{ beach.name }}" style="object-fit: cover; height: 20vh;">
+      </div>
 
-
-            <div class="row rounded mr-1">
-              <div class="col">
-                <div class="crop rounded-lg" >
-                  <img src="{{beach.photo}}" alt="{{ beach.name }}" class="card-img">
-                </div>  
-              </div>
-              <div class="col mt-3">
-                <div class="card-body">
+      <div class="card-body">
+        <div class="row">
+          <div class="col">
                   <h5 class="card-title">{{ beach.name }}</h5>
                   <p class="card-text">{{ beach.city + ' (' + beach.province + ')' }}</p>
-                </div>
-              </div>
-              <div class="col-1 mr-5">
-                <div class="weather-icon mt-5"><img [src]="beach.weatherIcon" alt="meteo"></div>
-              </div>
-            </div>
           </div>
-       
+          <div class="col">
+            <div class="weather-icon mr-2"><img [src]="beach.weatherIcon" alt="meteo" style="float: right;"></div>
+        </div>
+      </div>
     </div>
 
     <h3 *ngIf="loaded && beaches.length === 0">Non ci sono ancora spiagge! Provvedi ad aggiungerne.</h3>
@@ -73,5 +68,7 @@
 
 </div>
 
+
+</div>
 
 </div>
