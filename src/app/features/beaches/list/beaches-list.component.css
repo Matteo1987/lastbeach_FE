@@ -21,10 +21,10 @@ div .rounded-circle p {
   background-color: lightblue;
 }
 .card {
-        margin: 40px auto; /* Added */
+        margin: 10px auto; /* Added */
         float: none;
         margin-bottom: 20px; /* Added */
-        margin-left: 400 px;
+        margin-left: 100 px;
 }
 .card:hover {
   background-color:#e5f2f7
@@ -204,4 +204,14 @@ color: #e7e7d3;
     width: 400px;
     height: 300px;
     margin: -75px 0 0 -100px;
+}
+
+#image {
+  background: url(https://it.sailsquare.com/blog/app/uploads/sites/3/2017/04/Cala-Coticcio-Caprera-1-e1492522465771-2400x1056.jpg) no-repeat;
+  height: 500px;
+  background-position: center;
+  text-align: center;
+  padding-top: 250px;
+  color: white;
+  background-attachment: fixed;
 }
