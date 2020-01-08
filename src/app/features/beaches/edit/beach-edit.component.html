@@ -1,14 +1,14 @@
 
-  <div class="container mt-5 shadow">
+  <div class="container my-5">
     <div class="col">
       <form class="card p-5" [formGroup]="beachForm" (ngSubmit)="editBeach()">
         <div class="row">
         <h4>
           <a [routerLink]="['../../']">
-            <i class="fas fa-arrow-left mr-3"></i>
+            <i class="fas fa-arrow-left"></i>
           </a>
         </h4>
-        <h3> Modifica spiaggia di  {{beach.name}}</h3>
+        <h3 class="ml-4"> Suggerisci modifica spiaggia di  {{beach.name}}</h3>
       </div>
 
         <!-- Name and province -->
@@ -131,7 +131,7 @@
         </div>
 
         <div class="form-row mt-4">
-          <button type="submit" class="btn btn-success ml-auto mr-1">Modifica</button>
+          <button type="submit" [routerLink]="['../../']" (click)="clickMethod('conferma')" class="btn btn-success ml-auto mr-1">Fatto</button>
         </div>
       </form>
     </div>

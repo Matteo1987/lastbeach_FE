@@ -8,8 +8,7 @@
   
   <div class="col-3 mr-5 mt-5 border-right">
     <h4>Filtri</h4>
-    
-
+  
     <h4 class="mt-5">Tag</h4>
       
   </div>
@@ -52,23 +51,19 @@
       <div class="card-body">
         <div class="row">
           <div class="col">
-                  <h5 class="card-title">{{ beach.name }}</h5>
-                  <p class="card-text">{{ beach.city + ' (' + beach.province + ')' }}</p>
+            <h5 class="card-title">{{ beach.name }}</h5>
+            <p class="card-text">{{ beach.city + ' (' + beach.province + ')' }}</p>
           </div>
           <div class="col">
             <div class="weather-icon mr-2"><img [src]="beach.weatherIcon" alt="meteo" style="float: right;"></div>
+          </div>
         </div>
       </div>
+
+        <h3 *ngIf="loaded && beaches.length === 0">Non ci sono ancora spiagge! Provvedi ad aggiungerne.</h3>
+
+        <h3 *ngIf="!loaded">Loading...</h3>
+      </div>
     </div>
-
-    <h3 *ngIf="loaded && beaches.length === 0">Non ci sono ancora spiagge! Provvedi ad aggiungerne.</h3>
-
-    <h3 *ngIf="!loaded">Loading...</h3>
   </div>
-
-</div>
-
-
-</div>
-
 </div>

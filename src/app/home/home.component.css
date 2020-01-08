@@ -21,7 +21,6 @@ h2{
 
 }
 
-
 #textContainer{
   padding-top: 10%;
 }
@@ -36,9 +35,8 @@ color: #e7e7d3;
 
 #beachadvisor{
     color: white;
-    font-size: 700%;
+    font-size: 7vw;
     text-align: center;
-    padding-top: 10px;
     text-shadow: 0.5px 0.5px 5px rgb(43, 41, 41);
     
   }
@@ -47,30 +45,31 @@ color: #e7e7d3;
     padding: 10px;
     width: 15px;
     text-shadow: 0.5px 0.5px 5px rgb(43, 41, 41);
+    font-size: 2vw;
   }
   #divertimento{
     padding: 10px;
     width: 15px;
     text-shadow: 0.5px 0.5px 5px rgb(43, 41, 41);
+    font-size: 2vw;
   }
+  
   #family{
     padding: 10px;
     width: 15px;
     text-shadow: 0.5px 0.5px 5px rgb(43, 41, 41);
-
+    font-size: 2vw;
   }
 
   #typeBeaches{
     max-width: 20%;
-    padding-top: 180px;
   }
 
   #clicka{
     color: white;
-    font-size: 200%;
+    font-size: 3vw;
     text-align: center;
     text-shadow: 0.5px 0.5px 5px rgb(43, 41, 41);
-    
   }
 
   .button {
