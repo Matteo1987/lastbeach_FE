@@ -20,7 +20,8 @@ img {
 
 #map{
   width: 100%;
-  height: 85%;
+  height: 100%;
+  max-height: 300px;
 }
 
 #goMap{
