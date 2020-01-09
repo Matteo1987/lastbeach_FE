@@ -4,11 +4,11 @@
   <div class="row col-mx-auto">
     <div class="card w-100">
       <div class="card-header">
-        <h3 class="my-2">
+        <h2 class="my-3">
           <a [routerLink]="['../../list']" class="mr-3">
             <i class="fas fa-arrow-left" aria-hidden="true"></i>
           </a>
-          {{ beach.name }} - {{beach.city}} ({{beach.province}})</h3>
+          {{ beach.name }} - {{beach.city}} ({{beach.province}})</h2>
 
           <div class="row mt-3 mb-3" id="foto" style="margin-left: 10px;">
             <img [src]="beach.photo" alt="Spiaggia di {{beach.name}}" class="cropped">
@@ -17,7 +17,7 @@
       <div class="card-body">
         <div class="row">
 
-          <div class="col ml-5">
+          <div class="col mx-5 mt-5 px-5">
             <div class="row mt-4"><b>Meteo</b><img class="weather-icon ml-2" [src]="beach.weatherIcon"/></div>
 <!--            <div class="mb-3"><b class="mr-2">Traffico</b>-->
 <!--              <div class="rounded-circle d-inline-block {{getTrafficClass(beach.traffic)}}"><p>{{beach.traffic}}</p></div>-->
