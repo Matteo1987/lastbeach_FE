@@ -26,11 +26,49 @@
             <div class="row mt-3"><b>Posizione (lat, long) : </b>{{beach.latitude}}, {{beach.longitude}}</div>
           
           <div class="row mt-3" ><b>Tipo di spiaggia : </b>{{getBeachType(beach.beach_type)}}</div>
-          </div> 
-          <div class="col md-5 mr-3">
-            <div id="map" class="map shadow"></div>
-            <input id="goMap" class="btn btn-primary text-right mt-3 mb-3" type="button" (click)="setCenter()" value="Riposiziona Mappa">
           </div>
+
+          <div class="col-7 md-5 mr-3 p-0">
+            <p class="text-right">
+              <button class="btn btn-primary mr-3" type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2">Indicazioni Stradali</button>
+            </p>
+            <div class="row">
+              <div class="col">
+                <div class="collapse multi-collapse show" id="multiCollapseExample1">
+                  <div class="card card-body mx-3">
+                      <div id="map" class="map shadow"></div>
+                      <div class="text-right">
+                      <input id="goMap" class="btn btn-primary mt-3" type="button" (click)="setCenter()" value="Riposiziona Mappa">
+                    </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="collapse multi-collapse" id="multiCollapseExample2">
+                  <div class="card card-body m-0">
+                          <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m24!1m12!1m3!1d1562875.8516499593!2d8.045915435458591!3d40.086744494922385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m9!3e6!4m3!3m2!1d39.219286!2d9.0989074!4m3!3m2!1d40.960499999999996!2d9.58081!5e0!3m2!1sit!2sit!4v1577720297699!5m2!1sit!2sit" width="100%" height="500px" frameborder="0" style="border:0;" allowfullscreen=""></iframe>   -->
+                        <!-- questa è la prova fatta da me<iframe src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyDBl453JPQafg3ImRdNI01PYkxRrzVSDQw&origin=Oslo+Norway&destination={{beach.name}}">
+                          
+                          width="100%" 
+                          height="20"
+                          frameborder="0" 
+                          style="border:0";
+                          allowfullscreen="";
+                          API KEY NUOVA AIzaSyDBl453JPQafg3ImRdNI01PYkxRrzVSDQw 
+                        </iframe> -->
+                    <iframe class="shadow" [src]="mapDestinationUrl"   width="100%"
+                    height="350"
+                    frameborder="0" style="border:0"
+                    allowfullscreen></iframe>
+               
+                   </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            
           
           <div class="col-md-11 m-5 p-5 border rounded-lg text-center shadow">
             <h3 class="mb-4">Altre info e servizi:</h3>
@@ -112,41 +150,11 @@
             </span>
       </div>
 
+    </div>  
+    <div class="card-footer">
+      <a [routerLink]="['../../edit', beach.id]" id="edit" class="btn btn-outline-secondary">Suggerisci una modifica</a>
     </div>     
-           <div class="accordion" id="accordionExample">
-            <div class="card">
-              <div class="card-header" id="headingOne">
-                <h2 class="mb-0 text-center">
-                  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    Indicazioni Stradali
-                  </button>
-                </h2>
-              </div>
-          
-              <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-                <div class="card-body">
-                  <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m24!1m12!1m3!1d1562875.8516499593!2d8.045915435458591!3d40.086744494922385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m9!3e6!4m3!3m2!1d39.219286!2d9.0989074!4m3!3m2!1d40.960499999999996!2d9.58081!5e0!3m2!1sit!2sit!4v1577720297699!5m2!1sit!2sit" width="100%" height="500px" frameborder="0" style="border:0;" allowfullscreen=""></iframe>   -->
-                 <!-- questa è la prova fatta da me<iframe src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyDBl453JPQafg3ImRdNI01PYkxRrzVSDQw&origin=Oslo+Norway&destination={{beach.name}}">
-                  
-                  width="100%" 
-                  height="500px"
-                   frameborder="0" 
-                   style="border:0";
-                   allowfullscreen="";
-                  API KEY NUOVA AIzaSyDBl453JPQafg3ImRdNI01PYkxRrzVSDQw 
-                 </iframe> -->
-                 <iframe [src]="mapDestinationUrl"   width="100%"
-                 height="450"
-                 frameborder="0" style="border:0"
-                 allowfullscreen></iframe>
-               
-                </div>
-              </div>
-            </div>
-          </div>           
       </div>
-      <div class="card-footer">
-        <a [routerLink]="['../../edit', beach.id]" id="edit" class="btn btn-outline-secondary">Suggerisci una modifica</a>
-      </div>
+     
 </div>
-
+</div>

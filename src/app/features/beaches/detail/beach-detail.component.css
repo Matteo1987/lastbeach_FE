@@ -24,11 +24,6 @@ img {
   max-height: 300px;
 }
 
-#goMap{
-  float: right;
-  padding-right: 10px;
-}
-
 #edit{
   float: left;
 }
