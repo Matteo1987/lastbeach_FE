@@ -2,10 +2,13 @@
   <h1>Le Migliori Spiagge</h1>
 </div>
 
+<!--Container Principale con margin, padding e shadow. CSS inline per trasparenza -->
 <div class="container rounded mt-5 p-5 mb-5 shadow-lg" style="background-color:rgba(255, 255, 255, 0.8);">
 
+  <!--Row principale del container, contiene le due colonne dei filtri e delle Cards -->
   <div class="row">
   
+    <!--Inizio colonna dei filtri -->
     <div class="col-4 menu pr-4">
       <div class="search-bar">
         <input class="text-left" type="text" placeholder="Cerca spiagga o location">
@@ -113,10 +116,32 @@
       </div>
     </div>
 
+    <!--Inizio colonna delle cards-->
   <div class="col">
-    <div *ngIf="loaded" class="order-list mb-5 text-right">
 
-      <h4 class="d-inline-block">Ordina per: </h4>
+    <div class="summary pt-4 pb-2 mb-4">
+      <div class="meteo flex-row text-secondary">
+        <div class="col-8 d-inline-flex">
+          <div class="d-inline-flex mr-4">
+            <span class="text-uppercase mr-2">Oggi</span>
+            <b>+14°C</b>
+          </div>
+          <div class="d-inline-flex mr-4">
+            <span class="text-uppercase mr-2">Pioggia</span>
+            <b>4.8 mm</b>
+          </div>
+          <div class="d-inline-flex mr-4">
+            <span class="text-uppercase mr-2">Vento</span>
+            <b>12 m/s</b>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="loaded" class="order-list mb-5 text-right">
+      
+      <!-- Orina per commentato
+        <h4 class="d-inline-block">Ordina per: </h4>
       <form (change)="radioChange()">
         <div class="custom-control custom-radio custom-control-inline">
           <input type="radio" id="park" name="radio" class="custom-control-input" value="park" [(ngModel)]="radioValue">
@@ -131,24 +156,30 @@
         <!--      <div class="custom-control custom-radio custom-control-inline">-->
         <!--        <input type="radio" id="traffic" name="radio" class="custom-control-input" value="traffic" [(ngModel)]="radioValue">-->
         <!--        <label class="custom-control-label" for="traffic">Traffico</label>-->
-        <!--      </div>-->
+        <!--      </div>
         <div class="custom-control custom-radio custom-control-inline">
           <input type="radio" id="weather" name="radio" class="custom-control-input" value="weather"
             [(ngModel)]="radioValue">
           <label class="custom-control-label" for="weather">Meteo</label>
         </div>
       </form>
+
+    -->
+
     </div>
 
     <div class="row align-items-start ml-3" style="margin-bottom: 20px;">
     
+      <!--Ciclo creazione Cards spiagge clickabili. w-100 per occupare l'intera larghezza, shadow e border  -->
     <div *ngFor="let beach of beaches.slice(0, 10)" class="card cursor-pointer w-100 mt-2 border shadow" (click)="goToDetails(beach.id)">
             
       <div>
+        <!--Sfondo Cards, modificare altezza con CSS inline. unità VH (Viewport Height) responsive per la larghezza della finestra -->
         <img class="card-img-top" src="{{beach.photo}}" alt="{{ beach.name }}" style="object-fit: cover; height: 20vh;">
       </div>
 
       <div class="card-body">
+        <!--Nome e meteo in due colonne diverse -->
         <div class="row">
           <div class="col">
             <h5 class="card-title">{{ beach.name }}</h5>
@@ -160,6 +191,7 @@
         </div>
       </div>
 
+        <!--Condizioni assenza spiagge nel database -->
         <h3 *ngIf="loaded && beaches.length === 0">Non ci sono ancora spiagge! Provvedi ad aggiungerne.</h3>
 
         <h3 *ngIf="!loaded">Loading...</h3>
