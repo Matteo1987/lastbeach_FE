@@ -25,7 +25,7 @@
           <span class="pl-3 text-uppercase text-secondary mb-2 font-weight-bolder">Filtra spiagge</span>
         </div>
   
-        <div class="accordion" id="accordionExample" (change)="filterBeaches()">
+        <div class="accordion show" id="accordionExample" (change)="filterBeaches()">
           <div class="card">
             <div class="card-header" id="headingOne">
               <h2 class="mb-0">
@@ -82,13 +82,13 @@
           <div class="card">
             <div class="card-header" id="headingThree">
               <h2 class="mb-0">
-                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree"
-                        aria-expanded="false" aria-controls="collapseThree">
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseThree"
+                        aria-expanded="true" aria-controls="collapseThree">
                   Servizi
                 </button>
               </h2>
             </div>
-            <div id="collapseThree" class="collapse" aria-labelledby="headingThree">
+            <div id="collapseThree" class="collapse show" aria-labelledby="headingThree">
               <div class="card-body">
                 <form [formGroup]="servicesForm">
                   <div class="form-check form-check-group">
@@ -121,7 +121,7 @@
 
     <div class="summary pt-4 pb-2 mb-4">
       <div class="meteo flex-row text-secondary">
-        <div class="col-8 d-inline-flex">
+        <div class="col d-inline-flex">
           <div class="d-inline-flex mr-4">
             <span class="text-uppercase mr-2">Oggi</span>
             <b>+14°C</b>
@@ -152,8 +152,7 @@
             [(ngModel)]="radioValue">
           <label class="custom-control-label" for="summer_crowding">Affollamento</label>
         </div>
-
-        <!--      <div class="custom-control custom-radio custom-control-inline">-->
+                   <div class="custom-control custom-radio custom-control-inline">-->
         <!--        <input type="radio" id="traffic" name="radio" class="custom-control-input" value="traffic" [(ngModel)]="radioValue">-->
         <!--        <label class="custom-control-label" for="traffic">Traffico</label>-->
         <!--      </div>

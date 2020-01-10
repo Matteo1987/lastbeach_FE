@@ -24,6 +24,9 @@ html, body {
 
 nav{
 background-color: rgb(68, 66, 66);
+height: 4vw;
+min-height: 6%;
+padding-left: 2vw;
 }
 
 

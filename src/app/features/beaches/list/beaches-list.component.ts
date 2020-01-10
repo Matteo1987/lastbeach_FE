@@ -72,7 +72,7 @@ export class BeachesListComponent implements OnInit {
       );
   };
 
-  getWeather = (beach: Beach) => {
+  public getWeather = (beach: Beach) => {
     this.weatherService.getCurrent(beach.city, beach.latitude, beach.longitude)
       .subscribe((weather: CurrentWeather) => {
         beach.weatherIcon = this.getWeatherIconPath(weather.data[0].weather.icon);

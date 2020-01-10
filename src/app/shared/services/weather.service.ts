@@ -13,7 +13,7 @@ export class WeatherService {
   ) {
   }
 
-  getCurrent = (city: string, latitude?: number, longitude?: number) =>
+  public getCurrent = (city: string, latitude?: number, longitude?: number) =>
     this.http.get<CurrentWeather>(`${this.baseUrl}/current`, {params: this.getParams(city, latitude, longitude)});
 
   getForecast = (city: string, latitude?: number, longitude?: number) =>

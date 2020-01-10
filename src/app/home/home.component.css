@@ -49,31 +49,26 @@ color: #e7e7d3;
     
   }
 
- 
   button{
     font-size: 30px;
     color: white;
     text-shadow: 0.5px 0.5px 5px rgb(43, 41, 41);
     border-color:white;
   }
+  
 button:hover{
   font-size: 40px;
   color: white;
   text-shadow: 0.5px 0.5px 5px rgb(43, 41, 41);
   background-color: rgb(117, 117, 117);
-  border-color: white
-
+  border-color: white;
+  transition: 0.3s;
 }
-
-
 
 #paragraph{
      font-size: 30px;
      text-shadow: 0.5px 0.5px 5px rgb(43, 41, 41);
 }
-
-
-  
 
   #typeBeaches{
     
