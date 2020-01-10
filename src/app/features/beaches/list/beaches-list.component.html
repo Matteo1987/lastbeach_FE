@@ -6,12 +6,112 @@
 
   <div class="row">
   
-  <div class="col-3 mr-5 mt-5 border-right">
-    <h4>Filtri</h4>
+    <div class="col-3 menu">
+      <div class="search-bar">
+        <input class="text-left" type="text" placeholder="Cerca spiagga o location">
+        <i class="fa fa-search"></i>
+      </div>
+
+      <div class="tag-list p-2">
+        <ng-container *ngFor="let tag of tags">
+          <span class="badge badge-light m-1">{{tag}}</span>
+        </ng-container>
+      </div>
+      <div class="filters mt-4">
+        <div class="p-2">
+          <span class="pl-3 text-uppercase text-secondary mb-2 font-weight-bolder">Filtra spiagge</span>
+        </div>
   
-    <h4 class="mt-5">Tag</h4>
-      
-  </div>
+        <div class="accordion" id="accordionExample" (change)="filterBeaches()">
+          <div class="card">
+            <div class="card-header" id="headingOne">
+              <h2 class="mb-0">
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
+                        aria-expanded="true" aria-controls="collapseOne">
+                  Orientamento
+                </button>
+              </h2>
+            </div>
+  
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne">
+              <form [formGroup]="orientationForm">
+                <div class="card-body">
+                  <div class="form-check form-check-group">
+                    <input id="checkbox-occidentale" formControlName="west" type="checkbox">
+                    <label for="checkbox-occidentale">Occidentale</label>
+                  </div>
+                  <div class="form-check form-check-group">
+                    <input id="checkbox-meridionale" formControlName="south" type="checkbox">
+                    <label for="checkbox-meridionale">Meridionale</label>
+                  </div>
+                  <div class="form-check form-check-group">
+                    <input id="checkbox-orientale" formControlName="east" type="checkbox">
+                    <label for="checkbox-orientale">Orientale</label>
+                  </div>
+                  <div class="form-check form-check-group">
+                    <input id="checkbox-settentrionale" formControlName="north" type="checkbox">
+                    <label for="checkbox-settentrionale">Settentrionale</label>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingTwo">
+              <h2 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo"
+                        aria-expanded="true" aria-controls="collapseTwo">
+                  Affollamento
+                </button>
+              </h2>
+            </div>
+            <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo">
+              <div class="card-body">
+                <form [formGroup]="crowdForm">
+                  <div class="form-check form-check-group">
+                    <input id="checkbox-affollata" formControlName="affollata" type="checkbox">
+                    <label for="checkbox-affollata">Affollata</label>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingThree">
+              <h2 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree"
+                        aria-expanded="false" aria-controls="collapseThree">
+                  Servizi
+                </button>
+              </h2>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree">
+              <div class="card-body">
+                <form [formGroup]="servicesForm">
+                  <div class="form-check form-check-group">
+                    <input id="checkbox-park" formControlName="park" type="checkbox">
+                    <label for="checkbox-park">Parcheggio</label>
+                  </div>
+                  <div class="form-check form-check-group">
+                    <input id="checkbox-ristorazione" formControlName="food_service" type="checkbox">
+                    <label for="checkbox-ristorazione">Ristorazione</label>
+                  </div>
+                  <div class="form-check form-check-group">
+                    <input id="checkbox-bagnino" formControlName="lifeguard" type="checkbox">
+                    <label for="checkbox-bagnino">Bagnino</label>
+                  </div>
+                  <div class="form-check form-check-group">
+                    <input id="checkbox-cani" formControlName="dogs_allowed" type="checkbox">
+                    <label for="checkbox-cani">Cani ammessi</label>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
 
   <div class="col-lg">
     <div *ngIf="loaded" class="order-list mb-5 text-right">

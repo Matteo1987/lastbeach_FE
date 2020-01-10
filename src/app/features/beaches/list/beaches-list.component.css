@@ -110,3 +110,110 @@ h2{
   color: white;
   background-attachment: fixed;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+div.menu {
+  border-right: 3px solid #ddd;
+  padding-left: 0;
+  padding-right: 0;
+}
+div.menu .search-bar {
+  background-color: #fff;
+  color: #363636;
+  width: 100%;
+  padding: 10px;
+}
+div.menu .search-bar input {
+  width: 90%;
+  border: 0;
+  height: 50px;
+  font-size: 20px;
+  padding-left: 1rem;
+}
+div.menu .search-bar input ::placeholder, div.menu .search-bar input ::-webkit-input-placeholder, div.menu .search-bar input ::-moz-placeholder {
+  color: black !important;
+}
+div.menu .search-bar input i.fa {
+  width: 10%;
+}
+div.btn-group button {
+  border: 0;
+  border-bottom: 3px solid #ddd;
+}
+div.btn-group button.active {
+  border-bottom: 3px solid black;
+  font-weight: bold;
+  background-color: inherit;
+  color: inherit;
+}
+div.btn-group button:hover {
+  border-radius: 0;
+}
+div.tag-list .badge {
+  background-color: #fff !important;
+  font-size: 16px;
+  font-weight: normal;
+}
+div.filters div.accordion button.btn-link {
+  color: #363636;
+  font-size: 25px;
+}
+div.filters div.accordion button:after {
+  content: "\2B9E";
+  /* fa-chevron-down */
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+div.filters div.accordion button[aria-expanded="true"]:after {
+  content: "\2B9F";
+  /* fa-chevron-up */
+}
+div.filters div.accordion div.card-header {
+  background: white;
+  font-weight: bolder;
+  padding: 0 1rem;
+}
+div.filters div.accordion div.card-body {
+  background-color: #f2f2f2;
+}
+div.filters div.accordion div.card-body .form-check {
+  margin-left: 1rem;
+}
+div.filters div.accordion div.card-body .form-check input[type='checkbox'] {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 5px;
+  border: 2px solid #555;
+  margin: 6px 0 0;
+}
+div.filters div.accordion div.card-body .form-check input[type='checkbox']:checked {
+  background-color: lightblue;
+}
+div.filters div.accordion div.card-body .form-check label {
+  margin-left: 0.5rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
