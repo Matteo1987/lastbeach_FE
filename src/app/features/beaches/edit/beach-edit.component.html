@@ -1,4 +1,4 @@
-
+  <!--Main container con margini top e bottom -->
   <div class="container my-5">
     <div class="col">
       <form class="card p-5" [formGroup]="beachForm" (ngSubmit)="editBeach()">
@@ -130,6 +130,7 @@
           
         </div>
 
+        <!--Button conferma disabilitato. Il click porta una pagina indietro -->
         <div class="form-row mt-4">
           <button type="submit" [routerLink]="['../../']" (click)="clickMethod('conferma')" class="btn btn-success ml-auto mr-1">Fatto</button>
         </div>

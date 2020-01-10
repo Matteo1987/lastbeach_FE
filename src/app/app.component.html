@@ -1,3 +1,4 @@
+<!--INIZIO NAVBAR -->
 <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light py-3 shadow">
     <a class="navbar-brand ml-3" href="#">BeachAdvisor</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,14 +13,16 @@
       </ul>
     </div>
   </nav>
+  <!--FINE NAVBAR -->
 
+  <!--Wrapper dell'applicazione. questo div permette al footer di essere sempre in fondo alla finestra, crea spazio vuoto qualora il contenuto HTML non fosse alto abbastanza da mantenere il footer in basso -->
   <div id="wrap">
     <div id="main">
         <router-outlet></router-outlet>
     </div>
   </div>
 
-
+<!--INIZIO FOOTER -->
 <footer class="shadow-lg">
     <div class="footer">
       <div class="contain">
@@ -35,6 +38,7 @@
       <div class="col">
         <h1>Community</h1>
         <ul>
+           <!--Segnala Spiaggia porta al component Create-->
           <li class="dropdown-item" [routerLink]="['/beaches/create']">Segnala una spiaggia</li>
         </ul>
       </div>
@@ -73,12 +77,8 @@
           <li>P.I. 02468516546</li>
         </ul>
       </div>
-        
-  
-      
-      
     <div class="clearfix"></div>
     </div>
     </div>
-    <!-- END OF FOOTER -->
     </footer>
+     <!-- FINE FOOTER -->
