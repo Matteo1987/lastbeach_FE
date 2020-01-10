@@ -6,7 +6,7 @@
 
   <div class="row">
   
-    <div class="col-3 menu">
+    <div class="col-4 menu pr-4">
       <div class="search-bar">
         <input class="text-left" type="text" placeholder="Cerca spiagga o location">
         <i class="fa fa-search"></i>
@@ -113,10 +113,10 @@
       </div>
     </div>
 
-  <div class="col-lg">
+  <div class="col">
     <div *ngIf="loaded" class="order-list mb-5 text-right">
 
-      <h4 class="d-inline-block mr-2">Ordina per: </h4>
+      <h4 class="d-inline-block">Ordina per: </h4>
       <form (change)="radioChange()">
         <div class="custom-control custom-radio custom-control-inline">
           <input type="radio" id="park" name="radio" class="custom-control-input" value="park" [(ngModel)]="radioValue">
@@ -140,7 +140,7 @@
       </form>
     </div>
 
-    <div class="row align-items-start px-4" style="margin-bottom: 20px;">
+    <div class="row align-items-start ml-3" style="margin-bottom: 20px;">
     
     <div *ngFor="let beach of beaches.slice(0, 10)" class="card cursor-pointer w-100 mt-2 border shadow" (click)="goToDetails(beach.id)">
             
