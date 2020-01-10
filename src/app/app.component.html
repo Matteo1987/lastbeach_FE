@@ -1,0 +1,85 @@
+<!--INIZIO NAVBAR -->
+<nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light py-3 shadow">
+  <img src="https://img.icons8.com/pastel-glyph/64/000000/worldwide-location--v1.png" width="32" style="width: 32px;">
+    <a class="navbar-brand ml-3" href="#">BeachAdvisor</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/beaches/list']" >Esplora</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!--FINE NAVBAR -->
+
+  <!--Wrapper dell'applicazione. questo div permette al footer di essere sempre in fondo alla finestra, crea spazio vuoto qualora il contenuto HTML non fosse alto abbastanza da mantenere il footer in basso -->
+  <div id="wrap">
+    <div id="main">
+        <router-outlet></router-outlet>
+    </div>
+  </div>
+
+<!--INIZIO FOOTER -->
+<footer class="shadow-lg">
+    <div class="footer">
+      <div class="contain">
+      <div class="col">
+        <h1>Azienda</h1>
+        <ul>
+          <li>Chi siamo</li>
+          <li>Obbiettivi</li>
+          <li>Servizi</li>
+          
+          </ul>
+      </div>
+      <div class="col">
+        <h1>Community</h1>
+        <ul>
+           <!--Segnala Spiaggia porta al component Create-->
+          <li class="dropdown-item" [routerLink]="['/beaches/create']">Segnala una spiaggia</li>
+        </ul>
+      </div>
+      
+      <div class="col">
+        <h1>Contatti</h1>
+        <ul>
+          <li>Webmail</li>
+          <li>Telefono</li>
+          <li>Mappa del sito</li>
+          
+        </ul>
+      </div>
+      <div class="col">
+        <h1>Supporto</h1>
+        <ul>
+          <li>Web live chat</li>
+          <li>Apri ticket</li>
+        </ul>
+      </div>
+      <div class="col social">
+        <h1>Social</h1>
+        <ul>
+          <li><img src="https://svgshare.com/i/H5y.svg" width="32" style="width: 32px;"></li>
+          <li><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/1024px-Instagram_logo_2016.svg.png" width="32" style="width: 32px;"></li>
+          <li><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1024px-WhatsApp.svg.png" width="32" style="width: 32px;"></li>
+          <li><img src="https://upload.wikimedia.org/wikipedia/fr/c/c8/Twitter_Bird.svg" width="32" style="width: 32px;"></li>
+          <li><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/1024px-Telegram_logo.svg.png" width="32" style="width: 32px;"></li>
+          </ul>
+      </div>
+  
+      <div class="col">
+        <h1>Info</h1>
+        <ul>
+          <li>Sede legale: Viale La Playa 15, 09123 Cagliari</li>
+          <li>P.I. 02468516546</li>
+        </ul>
+      </div>
+    <div class="clearfix"></div>
+    </div>
+    </div>
+    </footer>
+     <!-- FINE FOOTER -->

@@ -1,0 +1,201 @@
+<div id="image">
+  <h1>Le Migliori Spiagge</h1>
+</div>
+
+<!--Container Principale con margin, padding e shadow. CSS inline per trasparenza -->
+<div class="container rounded mt-5 p-5 mb-5 shadow-lg" style="background-color:rgba(255, 255, 255, 0.8);">
+
+  <!--Row principale del container, contiene le due colonne dei filtri e delle Cards -->
+  <div class="row">
+  
+    <!--Inizio colonna dei filtri -->
+    <div class="col-4 menu pr-4">
+      <div class="search-bar">
+        <input class="text-left" type="text" placeholder="Cerca spiagga o location">
+        <i class="fa fa-search"></i>
+      </div>
+
+      <div class="tag-list p-2">
+        <ng-container *ngFor="let tag of tags">
+          <span class="badge badge-light m-1">{{tag}}</span>
+        </ng-container>
+      </div>
+      <div class="filters mt-4">
+        <div class="p-2">
+          <span class="pl-3 text-uppercase text-secondary mb-2 font-weight-bolder">Filtra spiagge</span>
+        </div>
+  
+        <div class="accordion" id="accordionExample" (change)="filterBeaches()">
+          <div class="card">
+            <div class="card-header" id="headingOne">
+              <h2 class="mb-0">
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
+                        aria-expanded="true" aria-controls="collapseOne">
+                  Orientamento
+                </button>
+              </h2>
+            </div>
+  
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne">
+              <form [formGroup]="orientationForm">
+                <div class="card-body">
+                  <div class="form-check form-check-group">
+                    <input id="checkbox-occidentale" formControlName="west" type="checkbox">
+                    <label for="checkbox-occidentale">Occidentale</label>
+                  </div>
+                  <div class="form-check form-check-group">
+                    <input id="checkbox-meridionale" formControlName="south" type="checkbox">
+                    <label for="checkbox-meridionale">Meridionale</label>
+                  </div>
+                  <div class="form-check form-check-group">
+                    <input id="checkbox-orientale" formControlName="east" type="checkbox">
+                    <label for="checkbox-orientale">Orientale</label>
+                  </div>
+                  <div class="form-check form-check-group">
+                    <input id="checkbox-settentrionale" formControlName="north" type="checkbox">
+                    <label for="checkbox-settentrionale">Settentrionale</label>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingTwo">
+              <h2 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo"
+                        aria-expanded="true" aria-controls="collapseTwo">
+                  Affollamento
+                </button>
+              </h2>
+            </div>
+            <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo">
+              <div class="card-body">
+                <form [formGroup]="crowdForm">
+                  <div class="form-check form-check-group">
+                    <input id="checkbox-affollata" formControlName="affollata" type="checkbox">
+                    <label for="checkbox-affollata">Affollata</label>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingThree">
+              <h2 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree"
+                        aria-expanded="false" aria-controls="collapseThree">
+                  Servizi
+                </button>
+              </h2>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree">
+              <div class="card-body">
+                <form [formGroup]="servicesForm">
+                  <div class="form-check form-check-group">
+                    <input id="checkbox-park" formControlName="park" type="checkbox">
+                    <label for="checkbox-park">Parcheggio</label>
+                  </div>
+                  <div class="form-check form-check-group">
+                    <input id="checkbox-ristorazione" formControlName="food_service" type="checkbox">
+                    <label for="checkbox-ristorazione">Ristorazione</label>
+                  </div>
+                  <div class="form-check form-check-group">
+                    <input id="checkbox-bagnino" formControlName="lifeguard" type="checkbox">
+                    <label for="checkbox-bagnino">Bagnino</label>
+                  </div>
+                  <div class="form-check form-check-group">
+                    <input id="checkbox-cani" formControlName="dogs_allowed" type="checkbox">
+                    <label for="checkbox-cani">Cani ammessi</label>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+
+    <!--Inizio colonna delle cards-->
+  <div class="col">
+
+    <div class="summary pt-4 pb-2 mb-4">
+      <div class="meteo flex-row text-secondary">
+        <div class="col-8 d-inline-flex">
+          <div class="d-inline-flex mr-4">
+            <span class="text-uppercase mr-2">Oggi</span>
+            <b>+14°C</b>
+          </div>
+          <div class="d-inline-flex mr-4">
+            <span class="text-uppercase mr-2">Pioggia</span>
+            <b>4.8 mm</b>
+          </div>
+          <div class="d-inline-flex mr-4">
+            <span class="text-uppercase mr-2">Vento</span>
+            <b>12 m/s</b>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="loaded" class="order-list mb-5 text-right">
+      
+      <!-- Orina per commentato
+        <h4 class="d-inline-block">Ordina per: </h4>
+      <form (change)="radioChange()">
+        <div class="custom-control custom-radio custom-control-inline">
+          <input type="radio" id="park" name="radio" class="custom-control-input" value="park" [(ngModel)]="radioValue">
+          <label class="custom-control-label" for="park">Parcheggio</label>
+        </div>
+        <div class="custom-control custom-radio custom-control-inline">
+          <input type="radio" id="summer_crowding" name="radio" class="custom-control-input" value="summer_crowding"
+            [(ngModel)]="radioValue">
+          <label class="custom-control-label" for="summer_crowding">Affollamento</label>
+        </div>
+
+        <!--      <div class="custom-control custom-radio custom-control-inline">-->
+        <!--        <input type="radio" id="traffic" name="radio" class="custom-control-input" value="traffic" [(ngModel)]="radioValue">-->
+        <!--        <label class="custom-control-label" for="traffic">Traffico</label>-->
+        <!--      </div>
+        <div class="custom-control custom-radio custom-control-inline">
+          <input type="radio" id="weather" name="radio" class="custom-control-input" value="weather"
+            [(ngModel)]="radioValue">
+          <label class="custom-control-label" for="weather">Meteo</label>
+        </div>
+      </form>
+
+    -->
+
+    </div>
+
+    <div class="row align-items-start ml-3" style="margin-bottom: 20px;">
+    
+      <!--Ciclo creazione Cards spiagge clickabili. w-100 per occupare l'intera larghezza, shadow e border  -->
+    <div *ngFor="let beach of beaches.slice(0, 10)" class="card cursor-pointer w-100 mt-2 border shadow" (click)="goToDetails(beach.id)">
+            
+      <div>
+        <!--Sfondo Cards, modificare altezza con CSS inline. unità VH (Viewport Height) responsive per la larghezza della finestra -->
+        <img class="card-img-top" src="{{beach.photo}}" alt="{{ beach.name }}" style="object-fit: cover; height: 20vh;">
+      </div>
+
+      <div class="card-body">
+        <!--Nome e meteo in due colonne diverse -->
+        <div class="row">
+          <div class="col">
+            <h5 class="card-title">{{ beach.name }}</h5>
+            <p class="card-text">{{ beach.city + ' (' + beach.province + ')' }}</p>
+          </div>
+          <div class="col">
+            <div class="weather-icon mr-2"><img [src]="beach.weatherIcon" alt="meteo" style="float: right;"></div>
+          </div>
+        </div>
+      </div>
+
+        <!--Condizioni assenza spiagge nel database -->
+        <h3 *ngIf="loaded && beaches.length === 0">Non ci sono ancora spiagge! Provvedi ad aggiungerne.</h3>
+
+        <h3 *ngIf="!loaded">Loading...</h3>
+      </div>
+    </div>
+  </div>
+</div>

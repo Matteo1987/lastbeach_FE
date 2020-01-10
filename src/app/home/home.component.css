@@ -1,0 +1,93 @@
+
+.bg-img{
+  min-height: 100vh;
+  height: 80%;
+ width: 100%;
+ background: url("https://www.touringclub.it/sites/default/files/immagini_georiferite/cala_luna.jpg") no-repeat center center fixed;
+ -webkit-background-size: cover;
+ -moz-background-size: cover;
+ -o-background-size: cover;
+ background-size: cover;
+ background-attachment: initial;
+background-position: center;
+ }
+
+h2{
+  color:grey;
+  font-size: 14px;
+  font-family: inherit;
+  font-weight: bold;
+  padding: 5px 0px 5px 0px;
+
+}
+
+h3{
+  color: white;
+  font-size: 270%;
+  text-align: center;
+  text-shadow: 0.5px 0.5px 5px rgb(43, 41, 41);
+}
+
+#textContainer{
+  padding-top: 10%;
+}
+
+.esplora {
+color: #e7e7d3;
+}
+
+.aggiungispiaggia{
+  color: #e7e7d3;
+  }
+
+#beachadvisor{
+    color: white;
+    font-size: 700%;
+    text-align: center;
+    padding-top: 10px;
+    text-shadow: 0.5px 0.5px 5px rgb(43, 41, 41);
+    
+  }
+
+ 
+  button{
+    font-size: 30px;
+    color: white;
+    text-shadow: 0.5px 0.5px 5px rgb(43, 41, 41);
+    border-color:white;
+  }
+button:hover{
+  font-size: 40px;
+  color: white;
+  text-shadow: 0.5px 0.5px 5px rgb(43, 41, 41);
+  background-color: rgb(117, 117, 117);
+  border-color: white
+
+}
+
+
+
+#paragraph{
+     font-size: 30px;
+     text-shadow: 0.5px 0.5px 5px rgb(43, 41, 41);
+}
+
+
+  
+
+  #typeBeaches{
+    
+    max-width: 70%;
+    padding-top: 5px;
+    background-color: hsla(233, 54%, 80%, 0.3);
+  }
+
+  #clicka{
+    color: white;
+    font-size: 270%;
+    text-align: center;
+    text-shadow: 0.5px 0.5px 5px rgb(43, 41, 41);
+    
+  }
+
+  
