@@ -43,6 +43,14 @@ export class BeachCreateComponent {
       first_aid: [false],
       toilet: [false],
       showers:[false],
+      snorkeling_diving: [false],        
+    kayak: [false],
+    discoteque:[false],
+    baby_parking:[false],
+    costa_nord: [false],
+    costa_sud: [false],
+    costa_est: [false],
+    costa_ovest:[false],
       beach_type: [false],
       photo: ['', Validators.required]
     });

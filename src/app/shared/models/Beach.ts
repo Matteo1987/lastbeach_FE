@@ -20,6 +20,14 @@ export interface Beach {
   first_aid?: boolean;
   toilet?: boolean;
   showers?: boolean;
+  snorkeling_diving? : boolean;
+  kayak?: boolean;
+  discoteque? : boolean;
+  baby_parking? : boolean;
+  costa_nord? : boolean;
+  costa_sud? : boolean;
+  costa_est? : boolean;
+   costa_ovest? : boolean;
   photo?: string;
   weatherIcon?: string;
   weather: CurrentWeather;
