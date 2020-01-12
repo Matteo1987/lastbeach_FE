@@ -49,3 +49,40 @@ export const BeachType = {
   partially_rocky : "parzialmente rocciosa",
   totally_rocky: "totalmente rocciosa"
 };
+
+export const beachFilters = {
+  family: {
+    food_service: true,
+    lifeguard: true,
+    summer_crowding: true,
+    sunbed_umbrella: true,
+    first_aid: true,
+    toilet: true,
+    park: true,
+    showers: true,
+    baby_parking: true
+  },
+  relax: {
+    food_service: true,
+    lifeguard: true,
+    summer_crowding: true,
+    sunbed_umbrella: true,
+    wifi: true,
+    first_aid: true,
+    toilet: true,
+    park: true,
+    showers: true
+  },
+  fun: {
+    food_service: true,
+    wifi: true,
+    discoteque: true
+  },
+  sport: {
+    summer_crowding: true,
+    lifeguard: true,
+    first_aid: true,
+    snorkeling_diving: true,
+    kayak: true
+  }
+};

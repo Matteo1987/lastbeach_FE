@@ -7,7 +7,7 @@
 
   <!--Row principale del container, contiene le due colonne dei filtri e delle Cards -->
   <div class="row">
-  
+
     <!--Inizio colonna dei filtri -->
     <div class="col-4 menu pr-4">
       <div class="search-bar">
@@ -24,46 +24,47 @@
         <div class="p-2">
           <span class="pl-3 text-uppercase text-secondary mb-2 font-weight-bolder">Filtra spiagge</span>
         </div>
-  
+
         <div class="accordion" id="accordionExample" (change)="filterBeaches()">
           <div class="card">
             <div class="card-header" id="headingOne">
               <h2 class="mb-0">
                 <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
-                        aria-expanded="true" aria-controls="collapseOne">
+                  aria-expanded="true" aria-controls="collapseOne">
                   Orientamento
                 </button>
               </h2>
             </div>
-  
+
             <div id="collapseOne" class="collapse show" aria-labelledby="headingOne">
               <form [formGroup]="orientationForm">
                 <div class="card-body">
                   <div class="form-check form-check-group">
-                    <input id="checkbox-occidentale" formControlName="west" type="checkbox">
+                    <input id="checkbox-occidentale" formControlName="Ovest" type="checkbox" (change)="filterBeaches($event)">
                     <label for="checkbox-occidentale">Occidentale</label>
                   </div>
                   <div class="form-check form-check-group">
-                    <input id="checkbox-meridionale" formControlName="south" type="checkbox">
+                    <input id="checkbox-meridionale" formControlName="Sud" type="checkbox" (change)="filterBeaches($event)">
                     <label for="checkbox-meridionale">Meridionale</label>
                   </div>
                   <div class="form-check form-check-group">
-                    <input id="checkbox-orientale" formControlName="east" type="checkbox">
+                    <input id="checkbox-orientale" formControlName="Est" type="checkbox" (change)="filterBeaches($event)">
                     <label for="checkbox-orientale">Orientale</label>
                   </div>
                   <div class="form-check form-check-group">
-                    <input id="checkbox-settentrionale" formControlName="north" type="checkbox">
+                    <input id="checkbox-settentrionale" formControlName="Nord" type="checkbox" (change)="filterBeaches($event)">
                     <label for="checkbox-settentrionale">Settentrionale</label>
                   </div>
                 </div>
               </form>
             </div>
           </div>
+
           <div class="card">
             <div class="card-header" id="headingTwo">
               <h2 class="mb-0">
                 <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo"
-                        aria-expanded="true" aria-controls="collapseTwo">
+                  aria-expanded="true" aria-controls="collapseTwo">
                   Affollamento
                 </button>
               </h2>
@@ -72,18 +73,19 @@
               <div class="card-body">
                 <form [formGroup]="crowdForm">
                   <div class="form-check form-check-group">
-                    <input id="checkbox-affollata" formControlName="affollata" type="checkbox">
-                    <label for="checkbox-affollata">Affollata</label>
+                    <input id="checkbox-non-affollata" formControlName="non_affollata" type="checkbox" (change)="filterBeaches($event)">
+                    <label for="checkbox-non-affollata">Non affollata</label>
                   </div>
                 </form>
               </div>
             </div>
           </div>
-          <div class="card">
+
+          <!-- <div class="card">
             <div class="card-header" id="headingThree">
               <h2 class="mb-0">
                 <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree"
-                        aria-expanded="false" aria-controls="collapseThree">
+                  aria-expanded="false" aria-controls="collapseThree">
                   Servizi
                 </button>
               </h2>
@@ -110,91 +112,189 @@
                 </form>
               </div>
             </div>
+          </div> -->
+
+          <div class="card">
+            <div class="card-header" id="headingThree">
+              <h2 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree"
+                  aria-expanded="false" aria-controls="collapseThree">
+                  Servizi
+                </button>
+              </h2>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree">
+              <div class="card-body">
+                <form [formGroup]="servicesForm" >
+                  <div class="form-check form-check-group">
+                    <input id="checkbox-park" formControlName="park" type="checkbox" (change)="filterBeaches($event)">
+                    <label for="checkbox-park">Parcheggio</label>
+                  </div>
+                  <div class="form-check form-check-group">
+                    <input id="checkbox-ristorazione" formControlName="food_service" type="checkbox" (change)="filterBeaches($event)">
+                    <label for="checkbox-ristorazione">Ristorazione</label>
+                  </div>
+                  <div class="form-check form-check-group">
+                    <input id="checkbox-bagnino" formControlName="lifeguard" type="checkbox" (change)="filterBeaches($event)">
+                    <label for="checkbox-bagnino">Bagnino</label>
+                  </div>
+                  <div class="form-check form-check-group">
+                    <input id="checkbox-cani" formControlName="dogs_allowed" type="checkbox" (change)="filterBeaches($event)">
+                    <label for="checkbox-cani">Cani ammessi</label>
+                  </div>
+
+                  <!-- Nuovi campi -->
+
+                  <div class="form-check form-check-group">
+                    <input id="checkbox-tobacconist" formControlName="tobacconist" type="checkbox" (change)="filterBeaches($event)">
+                    <label for="checkbox-tobacconist">Tabacchi</label>
+
+                  </div>
+                  <div class="form-check form-check-group">
+                    <input id="checkbox-disabled-access" formControlName="disabled_access" type="checkbox" (change)="filterBeaches($event)">
+                    <label for="checkbox-disabled-access">Accesso disabili</label>
+                  </div>
+                  <div class="form-check form-check-group">
+                    <input id="checkbox-sunbed-umbrella" formControlName="sunbed_umbrella" type="checkbox" (change)="filterBeaches($event)">
+                    <label for="checkbox-sunbed-umbrella">Ombrelloni</label>
+                  </div>
+                  <div class="form-check form-check-group">
+                    <input id="checkbox-wifi" formControlName="wifi" type="checkbox" (change)="filterBeaches($event)">
+                    <label for="checkbox-wifi">Wi-fi</label>
+                  </div>
+                  <div class="form-check form-check-group">
+                    <input id="checkbox-first-aid" formControlName="first_aid" type="checkbox" (change)="filterBeaches($event)">
+                    <label for="checkbox-first-aid">Kit primo soccorso</label>
+                  </div>
+                  <div class="form-check form-check-group">
+                    <input id="checkbox-toilet" formControlName="toilet" type="checkbox" (change)="filterBeaches($event)">
+                    <label for="checkbox-toilet">Toilet</label>
+                  </div>
+                  <div class="form-check form-check-group">
+                    <input id="checkbox-showers" formControlName="showers" type="checkbox" (change)="filterBeaches($event)">
+                    <label for="checkbox-showers">Docce</label>
+                  </div>
+                  <div class="form-check form-check-group">
+                    <input id="checkbox-snorkeling-diving" formControlName="snorkeling_diving" type="checkbox" (change)="filterBeaches($event)">
+                    <label for="checkbox-snorkeling-diving">Snorkeling e diving</label>
+                  </div>
+                  <div class="form-check form-check-group">
+                    <input id="checkbox-kayak" formControlName="kayak" type="checkbox" (change)="filterBeaches($event)">
+                    <label for="checkbox-kayak">Kayak</label>
+                  </div>
+                  <div class="form-check form-check-group">
+                    <input id="discoteque" formControlName="discoteque" type="checkbox" (change)="filterBeaches($event)">
+                    <label for="discoteque">Discoteque</label>
+                  </div>
+                  <div class="form-check form-check-group">
+                    <input id="baby-parking" formControlName="baby_parking" type="checkbox" (change)="filterBeaches($event)">
+                    <label for="baby-parking">Baby parking</label>
+                  </div>
+
+                </form>
+              </div>
+            </div>
           </div>
+
+          <div class="card">
+            <div class="card-header" id="headingFour">
+              <h2 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour"
+                  aria-expanded="false" aria-controls="collapseFour">
+                  Zona
+                </button>
+              </h2>
+            </div>
+            <div id="collapseFour" class="collapse" aria-labelledby="headingFour">
+              <div class="card-body">
+                <form [formGroup]="zoneForm">
+                  <div class="form-check form-check-group">
+                    <input id="checkbox-costa-nord" formControlName="costa_nord" type="checkbox" (change)="filterBeaches($event)">
+                    <label for="checkbox-costa-nord">Nord</label>
+                  </div>
+                  <div class="form-check form-check-group">
+                    <input id="checkbox-costa-ovest" formControlName="costa_ovest" type="checkbox" (change)="filterBeaches($event)">
+                    <label for="checkbox-costa-ovest">Ovest</label>
+                  </div>
+                  <div class="form-check form-check-group">
+                    <input id="checkbox-costa-est" formControlName="costa_est" type="checkbox" (change)="filterBeaches($event)">
+                    <label for="checkbox-costa-est">Est</label>
+                  </div>
+                  <div class="form-check form-check-group">
+                    <input id="checkbox-costa-sud" formControlName="costa_sud" type="checkbox" (change)="filterBeaches($event)">
+                    <label for="checkbox-costa-sud">Sud</label>
+                  </div>
+
+                </form>
+              </div>
+            </div>
+          </div>
+
         </div>
-  
+
       </div>
     </div>
 
     <!--Inizio colonna delle cards-->
-  <div class="col">
+    <div class="col">
 
-    <div class="summary pt-4 pb-2 mb-4">
-      <div class="meteo flex-row text-secondary">
-        <div class="col-8 d-inline-flex">
-          <div class="d-inline-flex mr-4">
-            <span class="text-uppercase mr-2">Oggi</span>
-            <b>+14°C</b>
-          </div>
-          <div class="d-inline-flex mr-4">
-            <span class="text-uppercase mr-2">Pioggia</span>
-            <b>4.8 mm</b>
-          </div>
-          <div class="d-inline-flex mr-4">
-            <span class="text-uppercase mr-2">Vento</span>
-            <b>12 m/s</b>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div *ngIf="loaded" class="order-list mb-5 text-right">
-      
-      <!-- Orina per commentato
-        <h4 class="d-inline-block">Ordina per: </h4>
-      <form (change)="radioChange()">
-        <div class="custom-control custom-radio custom-control-inline">
-          <input type="radio" id="park" name="radio" class="custom-control-input" value="park" [(ngModel)]="radioValue">
-          <label class="custom-control-label" for="park">Parcheggio</label>
-        </div>
-        <div class="custom-control custom-radio custom-control-inline">
-          <input type="radio" id="summer_crowding" name="radio" class="custom-control-input" value="summer_crowding"
-            [(ngModel)]="radioValue">
-          <label class="custom-control-label" for="summer_crowding">Affollamento</label>
-        </div>
-
-        <!--      <div class="custom-control custom-radio custom-control-inline">-->
-        <!--        <input type="radio" id="traffic" name="radio" class="custom-control-input" value="traffic" [(ngModel)]="radioValue">-->
-        <!--        <label class="custom-control-label" for="traffic">Traffico</label>-->
-        <!--      </div>
-        <div class="custom-control custom-radio custom-control-inline">
-          <input type="radio" id="weather" name="radio" class="custom-control-input" value="weather"
-            [(ngModel)]="radioValue">
-          <label class="custom-control-label" for="weather">Meteo</label>
-        </div>
-      </form>
-
-    -->
-
-    </div>
-
-    <div class="row align-items-start ml-3" style="margin-bottom: 20px;">
-    
-      <!--Ciclo creazione Cards spiagge clickabili. w-100 per occupare l'intera larghezza, shadow e border  -->
-    <div *ngFor="let beach of beaches.slice(0, 10)" class="card cursor-pointer w-100 mt-2 border shadow" (click)="goToDetails(beach.id)">
-            
-      <div>
-        <!--Sfondo Cards, modificare altezza con CSS inline. unità VH (Viewport Height) responsive per la larghezza della finestra -->
-        <img class="card-img-top" src="{{beach.photo}}" alt="{{ beach.name }}" style="object-fit: cover; height: 20vh;">
-      </div>
-
-      <div class="card-body">
-        <!--Nome e meteo in due colonne diverse -->
-        <div class="row">
-          <div class="col">
-            <h5 class="card-title">{{ beach.name }}</h5>
-            <p class="card-text">{{ beach.city + ' (' + beach.province + ')' }}</p>
-          </div>
-          <div class="col">
-            <div class="weather-icon mr-2"><img [src]="beach.weatherIcon" alt="meteo" style="float: right;"></div>
+      <div class="summary pt-4 pb-2 mb-4">
+        <div class="meteo flex-row text-secondary">
+          <div class="col-8 d-inline-flex">
+            <div class="d-inline-flex mr-4">
+              <span class="text-uppercase mr-2">Oggi</span>
+              <b>+14°C</b>
+            </div>
+            <div class="d-inline-flex mr-4">
+              <span class="text-uppercase mr-2">Pioggia</span>
+              <b>4.8 mm</b>
+            </div>
+            <div class="d-inline-flex mr-4">
+              <span class="text-uppercase mr-2">Vento</span>
+              <b>12 m/s</b>
+            </div>
           </div>
         </div>
       </div>
 
-        <!--Condizioni assenza spiagge nel database -->
-        <h3 *ngIf="loaded && beaches.length === 0">Non ci sono ancora spiagge! Provvedi ad aggiungerne.</h3>
+      <div *ngIf="loaded" class="order-list mb-5 text-right">
+        <div class="row align-items-start ml-3" style="margin-bottom: 20px;">
 
-        <h3 *ngIf="!loaded">Loading...</h3>
+          <!--Ciclo creazione Cards spiagge clickabili. w-100 per occupare l'intera larghezza, shadow e border  -->
+          <div *ngFor="let beach of filteredBeaches.slice(0, 10)" class="card cursor-pointer w-100 mt-2 border shadow"
+            (click)="goToDetails(beach.id)">
+
+            <div>
+              <!--Sfondo Cards, modificare altezza con CSS inline. unità VH (Viewport Height) responsive per la larghezza della finestra -->
+              <img class="card-img-top" src="{{beach.photo}}" alt="{{ beach.name }}"
+                style="object-fit: cover; height: 20vh;">
+            </div>
+
+            <div class="card-body">
+              <!--Nome e meteo in due colonne diverse -->
+              <div class="row">
+                <div class="col">
+                  <h5 class="card-title">{{ beach.name }}</h5>
+                  <p class="card-text">{{ beach.city + ' (' + beach.province + ')' }}</p>
+                </div>
+                <div class="col">
+                  <div class="weather-icon mr-2"><img [src]="beach.weatherIcon" alt="meteo" style="float: right;"></div>
+                </div>
+              </div>
+            </div>
+
+            <!--Condizioni assenza spiagge nel database -->
+            <h3 *ngIf="loaded && beaches.length === 0">Non ci sono ancora spiagge! Provvedi ad aggiungerne.</h3>
+
+
+          </div>
+        </div>
+
+      </div>
+
+      <div *ngIf="!loaded" class="text-center">
+        <h3>Loading...</h3>
+        <div class="spinner-border ml-auto" role="status" aria-hidden="true"></div>
       </div>
     </div>
   </div>

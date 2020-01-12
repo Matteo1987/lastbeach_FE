@@ -8,10 +8,10 @@
   
   <div  class="container container-fluid  py-4 text-center"  id="typeBeaches">
 
-  <button type="button" class="btn btn-outline-secondary mx-3 "><span>Fare sport </span></button>
-  <button type="button" class="btn btn-outline-secondary mx-3 "><span>Divertirmi </span></button>
-  <button type="button" class="btn btn-outline-secondary mx-3 "><span>Stare in famiglia </span></button>
-  <button type="button" class="btn btn-outline-secondary mx-3 "><span>Rilassarmi </span></button>
+  <button type="button" class="btn btn-outline-secondary mx-3 " [routerLink]="['/beaches/list']" [queryParams]="{ filter: 'sport' }"><span>Fare sport </span></button>
+  <button type="button" class="btn btn-outline-secondary mx-3 " [routerLink]="['/beaches/list']" [queryParams]="{ filter: 'fun' }"><span>Divertirmi </span></button>
+  <button type="button" class="btn btn-outline-secondary mx-3 " [routerLink]="['/beaches/list']" [queryParams]="{ filter: 'family' }"><span>Stare in famiglia </span></button>
+  <button type="button" class="btn btn-outline-secondary mx-3 " [routerLink]="['/beaches/list']" [queryParams]="{ filter: 'relax' }"><span>Rilassarmi </span></button>
   </div>
 
   </div>
