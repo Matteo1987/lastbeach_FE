@@ -3,13 +3,15 @@
 
   <div class="container" id="textContainer">
     <p id="beachadvisor">BeachAdvisor</p>
-    <p id="clicka" class="mt-5">Scegli la spiaggia che fa per te</p>
+    <p id="clicka" class="mt-5">Vorrei andare in una spiaggia adatta per :</p>
   </div>
   
-  <div  class="container mx-auto rounded-lg mt-5" id="typeBeaches">
-  <h1><button class="button" id="sport"><span>Sport </span></button></h1>
-  <h1><button class="button" id="divertimento"  ><span>Divertimento </span></button></h1>
-  <h1><button class="button" id=family style="vertical-align:middle"><span>Famiglia </span></button></h1>
+  <div  class="container container-fluid  py-4 text-center"  id="typeBeaches">
+
+  <button type="button" class="btn btn-outline-secondary mx-3 " [routerLink]="['/beaches/list']" [queryParams]="{ filter: 'sport' }"><span>Fare sport </span></button>
+  <button type="button" class="btn btn-outline-secondary mx-3 " [routerLink]="['/beaches/list']" [queryParams]="{ filter: 'fun' }"><span>Divertirmi </span></button>
+  <button type="button" class="btn btn-outline-secondary mx-3 " [routerLink]="['/beaches/list']" [queryParams]="{ filter: 'family' }"><span>Stare in famiglia </span></button>
+  <button type="button" class="btn btn-outline-secondary mx-3 " [routerLink]="['/beaches/list']" [queryParams]="{ filter: 'relax' }"><span>Rilassarmi </span></button>
   </div>
 
   </div>

@@ -1,14 +1,14 @@
-import {Component} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {Beach, Orientation, BeachType} from '../../../shared/models/Beach';
-import {BeachService} from '../../../shared/services/beaches.service';
-import {Router} from '@angular/router';
+import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Beach, Orientation, BeachType } from '../../../shared/models/Beach';
+import { BeachService } from '../../../shared/services/beaches.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-beach-create',
   templateUrl: './beach-create.component.html',
   styleUrls: ['./beach-create.component.css']
- 
+
 })
 export class BeachCreateComponent {
 
@@ -36,21 +36,21 @@ export class BeachCreateComponent {
       lifeguard: [false],
       dogs_allowed: [false],
       summer_crowding: [false],
-      tobacconist: [false],   
+      tobacconist: [false],
       disabled_access: [false],
       sunbed_umbrella: [false],
       wifi: [false],
       first_aid: [false],
       toilet: [false],
-      showers:[false],
-      snorkeling_diving: [false],        
-    kayak: [false],
-    discoteque:[false],
-    baby_parking:[false],
-    costa_nord: [false],
-    costa_sud: [false],
-    costa_est: [false],
-    costa_ovest:[false],
+      showers: [false],
+      snorkeling_diving: [false],
+      kayak: [false],
+      discoteque: [false],
+      baby_parking: [false],
+      costa_nord: [false],
+      costa_sud: [false],
+      costa_est: [false],
+      costa_ovest: [false],
       beach_type: [false],
       photo: ['', Validators.required]
     });
@@ -64,7 +64,7 @@ export class BeachCreateComponent {
       return;
     }
 
-    const beach: Beach = {...this.beachForm.value};
+    const beach: Beach = { ...this.beachForm.value };
 
     this.beachService.insertBeach(beach)
       .subscribe(result => {
