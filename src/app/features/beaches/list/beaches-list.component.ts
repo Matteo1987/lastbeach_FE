@@ -46,31 +46,31 @@ export class BeachesListComponent implements OnInit {
       Ovest: [true]
     });
     this.servicesForm = this.formBuilder.group({
-      park: [true],
-      food_service: [true],
-      lifeguard: [true],
-      dogs_allowed: [true],
-      summer_crowding: [true],
-      tobacconist: [true],
-      disabled_access: [true],
-      sunbed_umbrella: [true],
-      wifi: [true],
-      first_aid: [true],
-      toilet: [true],
-      showers: [true],
-      snorkeling_diving: [true],
-      kayak: [true],
-      discoteque: [true],
-      baby_parking: [true]
+      park: [false],
+      food_service: [false],
+      lifeguard: [false],
+      dogs_allowed: [false],
+      summer_crowding: [false],
+      tobacconist: [false],
+      disabled_access: [false],
+      sunbed_umbrella: [false],
+      wifi: [false],
+      first_aid: [false],
+      toilet: [false],
+      showers: [false],
+      snorkeling_diving: [false],
+      kayak: [false],
+      discoteque: [false],
+      baby_parking: [false],
     });
     this.crowdForm = this.formBuilder.group({
       non_affollata: [true]
     });
     this.zoneForm = this.formBuilder.group({
-      costa_nord: [true],
-      costa_sud: [true],
-      costa_est: [true],
-      costa_ovest: [true]
+      costa_nord: [false],
+      costa_sud: [false],
+      costa_est: [false],
+      costa_ovest: [false]
     });
   }
 
@@ -78,6 +78,7 @@ export class BeachesListComponent implements OnInit {
     this.setFilters();
     this.loadComponent();
   }
+ 
 
   setFilters = () => {
     this.mainFilter = this.route.snapshot.queryParams.filter;
@@ -103,7 +104,7 @@ export class BeachesListComponent implements OnInit {
       }
 
       if (filterType) {
-        let services = {...this.servicesForm.value};
+        let services = { ...this.servicesForm.value };
         Object.keys(services).forEach(function (item) {
           if (filterType.hasOwnProperty(item) && filterType[item]) {
             services[item] = true;
@@ -116,7 +117,7 @@ export class BeachesListComponent implements OnInit {
         this.servicesForm.patchValue(services);
 
         if (filterType.hasOwnProperty('summer_crowding') && filterType.summer_crowding) {
-          this.crowdForm.patchValue({summer_crowding: true});
+          this.crowdForm.patchValue({ summer_crowding: true });
         }
 
       }
@@ -221,6 +222,16 @@ export class BeachesListComponent implements OnInit {
       return (services[item]);
     });
     this.filteredBeaches = this.getFilteredBeaches(this.beaches, servicesFilter);
+
+
+
+    let zone = { ...this.zoneForm.value };
+    let zoneFilter = [];
+
+    zoneFilter = Object.keys(zone).filter(function (item) {
+      return (zone[item]);
+    });
+    this.filteredBeaches = this.getFilteredBeaches(this.filteredBeaches, zoneFilter);
     // this.formatBeaches(this.filteredBeaches);
 
     let crowd = { ...this.crowdForm.value };
@@ -263,15 +274,30 @@ export class BeachesListComponent implements OnInit {
   };
 
   getFilteredBeaches(filteredBeaches, filterList) {
-    return filteredBeaches = filteredBeaches.filter(beach => {
-      let beachOk = false;
-      filterList.forEach(function (item) {
-        if (item && beach[item]) {
-          beachOk = true;
+
+    if (filterList && filterList.length > 0) {
+      return filteredBeaches = filteredBeaches.filter(beach => {
+        let beachOk = false;
+        for (let item of filterList) {
+          console.log(beach[item]);
+          if (item && beach[item]) {
+            beachOk = true;
+            console.log('oook');
+          }
+          else {
+            beachOk = false;
+
+            break;
+          }
+         
         }
+        return beachOk;
       });
-      return beachOk;
-    });
+    }
+    else {
+      return filteredBeaches;
+    }
+
 
   }
 
