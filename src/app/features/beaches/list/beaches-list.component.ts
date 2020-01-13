@@ -209,7 +209,7 @@ export class BeachesListComponent implements OnInit {
 
   }
 
-  filterBeaches = ($event = null) => {
+  filterBeaches = () => {
     // const beaches: Array<Beach> = [];
     const orientation = this.orientationForm.value;
 
@@ -279,10 +279,10 @@ export class BeachesListComponent implements OnInit {
       return filteredBeaches = filteredBeaches.filter(beach => {
         let beachOk = false;
         for (let item of filterList) {
-          console.log(beach[item]);
+         
           if (item && beach[item]) {
             beachOk = true;
-            console.log('oook');
+          
           }
           else {
             beachOk = false;

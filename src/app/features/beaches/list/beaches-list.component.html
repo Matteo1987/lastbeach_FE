@@ -40,19 +40,19 @@
               <form [formGroup]="orientationForm">
                 <div class="card-body">
                   <div class="form-check form-check-group">
-                    <input id="checkbox-occidentale" formControlName="Ovest" type="checkbox" (change)="filterBeaches($event)">
+                    <input id="checkbox-occidentale" formControlName="Ovest" type="checkbox" (change)="filterBeaches()">
                     <label for="checkbox-occidentale">Occidentale</label>
                   </div>
                   <div class="form-check form-check-group">
-                    <input id="checkbox-meridionale" formControlName="Sud" type="checkbox" (change)="filterBeaches($event)">
+                    <input id="checkbox-meridionale" formControlName="Sud" type="checkbox" (change)="filterBeaches()">
                     <label for="checkbox-meridionale">Meridionale</label>
                   </div>
                   <div class="form-check form-check-group">
-                    <input id="checkbox-orientale" formControlName="Est" type="checkbox" (change)="filterBeaches($event)">
+                    <input id="checkbox-orientale" formControlName="Est" type="checkbox" (change)="filterBeaches()">
                     <label for="checkbox-orientale">Orientale</label>
                   </div>
                   <div class="form-check form-check-group">
-                    <input id="checkbox-settentrionale" formControlName="Nord" type="checkbox" (change)="filterBeaches($event)">
+                    <input id="checkbox-settentrionale" formControlName="Nord" type="checkbox" (change)="filterBeaches()">
                     <label for="checkbox-settentrionale">Settentrionale</label>
                   </div>
                 </div>
@@ -73,7 +73,7 @@
               <div class="card-body">
                 <form [formGroup]="crowdForm">
                   <div class="form-check form-check-group">
-                    <input id="checkbox-non-affollata" formControlName="non_affollata" type="checkbox" (change)="filterBeaches($event)">
+                    <input id="checkbox-non-affollata" formControlName="non_affollata" type="checkbox" (change)="filterBeaches()">
                     <label for="checkbox-non-affollata">Non affollata</label>
                   </div>
                 </form>
@@ -127,67 +127,67 @@
               <div class="card-body">
                 <form [formGroup]="servicesForm" >
                   <div class="form-check form-check-group">
-                    <input id="checkbox-park" formControlName="park" type="checkbox" (change)="filterBeaches($event)">
+                    <input id="checkbox-park" formControlName="park" type="checkbox" (change)="filterBeaches()">
                     <label for="checkbox-park">Parcheggio</label>
                   </div>
                   <div class="form-check form-check-group">
-                    <input id="checkbox-ristorazione" formControlName="food_service" type="checkbox" (change)="filterBeaches($event)">
+                    <input id="checkbox-ristorazione" formControlName="food_service" type="checkbox" (change)="filterBeaches()">
                     <label for="checkbox-ristorazione">Ristorazione</label>
                   </div>
                   <div class="form-check form-check-group">
-                    <input id="checkbox-bagnino" formControlName="lifeguard" type="checkbox" (change)="filterBeaches($event)">
+                    <input id="checkbox-bagnino" formControlName="lifeguard" type="checkbox" (change)="filterBeaches()">
                     <label for="checkbox-bagnino">Bagnino</label>
                   </div>
                   <div class="form-check form-check-group">
-                    <input id="checkbox-cani" formControlName="dogs_allowed" type="checkbox" (change)="filterBeaches($event)">
+                    <input id="checkbox-cani" formControlName="dogs_allowed" type="checkbox" (change)="filterBeaches()">
                     <label for="checkbox-cani">Cani ammessi</label>
                   </div>
 
                   <!-- Nuovi campi -->
 
                   <div class="form-check form-check-group">
-                    <input id="checkbox-tobacconist" formControlName="tobacconist" type="checkbox" (change)="filterBeaches($event)">
+                    <input id="checkbox-tobacconist" formControlName="tobacconist" type="checkbox" (change)="filterBeaches()">
                     <label for="checkbox-tobacconist">Tabacchi</label>
 
                   </div>
                   <div class="form-check form-check-group">
-                    <input id="checkbox-disabled-access" formControlName="disabled_access" type="checkbox" (change)="filterBeaches($event)">
+                    <input id="checkbox-disabled-access" formControlName="disabled_access" type="checkbox" (change)="filterBeaches()">
                     <label for="checkbox-disabled-access">Accesso disabili</label>
                   </div>
                   <div class="form-check form-check-group">
-                    <input id="checkbox-sunbed-umbrella" formControlName="sunbed_umbrella" type="checkbox" (change)="filterBeaches($event)">
+                    <input id="checkbox-sunbed-umbrella" formControlName="sunbed_umbrella" type="checkbox" (change)="filterBeaches()">
                     <label for="checkbox-sunbed-umbrella">Ombrelloni</label>
                   </div>
                   <div class="form-check form-check-group">
-                    <input id="checkbox-wifi" formControlName="wifi" type="checkbox" (change)="filterBeaches($event)">
+                    <input id="checkbox-wifi" formControlName="wifi" type="checkbox" (change)="filterBeaches()">
                     <label for="checkbox-wifi">Wi-fi</label>
                   </div>
                   <div class="form-check form-check-group">
-                    <input id="checkbox-first-aid" formControlName="first_aid" type="checkbox" (change)="filterBeaches($event)">
+                    <input id="checkbox-first-aid" formControlName="first_aid" type="checkbox" (change)="filterBeaches()">
                     <label for="checkbox-first-aid">Kit primo soccorso</label>
                   </div>
                   <div class="form-check form-check-group">
-                    <input id="checkbox-toilet" formControlName="toilet" type="checkbox" (change)="filterBeaches($event)">
+                    <input id="checkbox-toilet" formControlName="toilet" type="checkbox" (change)="filterBeaches()">
                     <label for="checkbox-toilet">Toilet</label>
                   </div>
                   <div class="form-check form-check-group">
-                    <input id="checkbox-showers" formControlName="showers" type="checkbox" (change)="filterBeaches($event)">
+                    <input id="checkbox-showers" formControlName="showers" type="checkbox" (change)="filterBeaches()">
                     <label for="checkbox-showers">Docce</label>
                   </div>
                   <div class="form-check form-check-group">
-                    <input id="checkbox-snorkeling-diving" formControlName="snorkeling_diving" type="checkbox" (change)="filterBeaches($event)">
+                    <input id="checkbox-snorkeling-diving" formControlName="snorkeling_diving" type="checkbox" (change)="filterBeaches()">
                     <label for="checkbox-snorkeling-diving">Snorkeling e diving</label>
                   </div>
                   <div class="form-check form-check-group">
-                    <input id="checkbox-kayak" formControlName="kayak" type="checkbox" (change)="filterBeaches($event)">
+                    <input id="checkbox-kayak" formControlName="kayak" type="checkbox" (change)="filterBeaches()">
                     <label for="checkbox-kayak">Kayak</label>
                   </div>
                   <div class="form-check form-check-group">
-                    <input id="discoteque" formControlName="discoteque" type="checkbox" (change)="filterBeaches($event)">
+                    <input id="discoteque" formControlName="discoteque" type="checkbox" (change)="filterBeaches()">
                     <label for="discoteque">Discoteque</label>
                   </div>
                   <div class="form-check form-check-group">
-                    <input id="baby-parking" formControlName="baby_parking" type="checkbox" (change)="filterBeaches($event)">
+                    <input id="baby-parking" formControlName="baby_parking" type="checkbox" (change)="filterBeaches()">
                     <label for="baby-parking">Baby parking</label>
                   </div>
 
@@ -209,19 +209,19 @@
               <div class="card-body">
                 <form [formGroup]="zoneForm">
                   <div class="form-check form-check-group">
-                    <input id="checkbox-costa-nord" formControlName="costa_nord" type="checkbox" (change)="filterBeaches($event)">
+                    <input id="checkbox-costa-nord" formControlName="costa_nord" type="checkbox" (change)="filterBeaches()">
                     <label for="checkbox-costa-nord">Nord</label>
                   </div>
                   <div class="form-check form-check-group">
-                    <input id="checkbox-costa-ovest" formControlName="costa_ovest" type="checkbox" (change)="filterBeaches($event)">
+                    <input id="checkbox-costa-ovest" formControlName="costa_ovest" type="checkbox" (change)="filterBeaches()">
                     <label for="checkbox-costa-ovest">Ovest</label>
                   </div>
                   <div class="form-check form-check-group">
-                    <input id="checkbox-costa-est" formControlName="costa_est" type="checkbox" (change)="filterBeaches($event)">
+                    <input id="checkbox-costa-est" formControlName="costa_est" type="checkbox" (change)="filterBeaches()">
                     <label for="checkbox-costa-est">Est</label>
                   </div>
                   <div class="form-check form-check-group">
-                    <input id="checkbox-costa-sud" formControlName="costa_sud" type="checkbox" (change)="filterBeaches($event)">
+                    <input id="checkbox-costa-sud" formControlName="costa_sud" type="checkbox" (change)="filterBeaches()">
                     <label for="checkbox-costa-sud">Sud</label>
                   </div>
 
