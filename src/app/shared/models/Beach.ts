@@ -65,8 +65,8 @@ export const beachFilters = {
   relax: {
     food_service: true,
     
-    summer_crowding: true,
-    sunbed_umbrella: true,
+   
+     sunbed_umbrella: true,
    
     
     toilet: true,

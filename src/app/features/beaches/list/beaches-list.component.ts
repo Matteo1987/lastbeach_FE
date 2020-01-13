@@ -64,7 +64,7 @@ export class BeachesListComponent implements OnInit {
       baby_parking: [false],
     });
     this.crowdForm = this.formBuilder.group({
-      non_affollata: [true]
+      affollata: [false]
     });
     this.zoneForm = this.formBuilder.group({
       costa_nord: [false],
