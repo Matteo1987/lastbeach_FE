@@ -1,3 +1,7 @@
+* {
+  font-family: 'IBM Plex Sans Condensed', sans-serif;
+}
+
 #navbar{
   height: 10%;
   padding-left: 2vw;

@@ -101,6 +101,10 @@ export class BeachesListComponent implements OnInit {
           filterType = this.beachFilters.relax;
           break;
         }
+        case 'reset': {
+          filterType = this.beachFilters.reset;
+          break;
+        }
       }
 
       if (filterType) {
@@ -119,11 +123,8 @@ export class BeachesListComponent implements OnInit {
         if (filterType.hasOwnProperty('summer_crowding') && filterType.summer_crowding) {
           this.crowdForm.patchValue({ summer_crowding: true });
         }
-
       }
-
     }
-
   }
 
   loadComponent = () => {
@@ -206,7 +207,6 @@ export class BeachesListComponent implements OnInit {
     for (let i = 0; i < beaches.length; i += cols) {
       this.newBeaches.push({ items: beaches.slice(i, i + cols) });
     }
-
   }
 
   filterBeaches = () => {
@@ -222,7 +222,6 @@ export class BeachesListComponent implements OnInit {
       return (services[item]);
     });
     this.filteredBeaches = this.getFilteredBeaches(this.beaches, servicesFilter);
-
 
 
     let zone = { ...this.zoneForm.value };
@@ -268,9 +267,6 @@ export class BeachesListComponent implements OnInit {
     // );
 
     // this.formatBeaches(this.filteredBeaches);
-
-
-
   };
 
   getFilteredBeaches(filteredBeaches, filterList) {
@@ -288,8 +284,7 @@ export class BeachesListComponent implements OnInit {
             beachOk = false;
 
             break;
-          }
-         
+          }    
         }
         return beachOk;
       });
@@ -297,10 +292,5 @@ export class BeachesListComponent implements OnInit {
     else {
       return filteredBeaches;
     }
-
-
   }
-
-
 }
-
