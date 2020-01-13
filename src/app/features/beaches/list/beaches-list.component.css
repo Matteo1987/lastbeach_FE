@@ -102,9 +102,7 @@ h2{
 #image {
   background: url(https://it.sailsquare.com/blog/app/uploads/sites/3/2017/04/Cala-Coticcio-Caprera-1-e1492522465771-2400x1056.jpg) no-repeat;
   height: 500px;
-  width: 90%;
-  margin-left: 5%;
-  margin-right: 5%;
+  width: 100%;
   text-align: center;
   padding-top: 250px;
   color: white;

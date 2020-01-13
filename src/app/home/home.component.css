@@ -61,8 +61,8 @@ button:hover{
   color: white;
   text-shadow: 0.5px 0.5px 5px rgb(43, 41, 41);
   background-color: rgb(117, 117, 117);
-  border-color: white
-
+  border-color: white;
+  transition: 0.3s;
 }
 
 
@@ -79,7 +79,6 @@ button:hover{
     
     max-width: 70%;
     padding-top: 5px;
-    background-color: hsla(233, 54%, 80%, 0.3);
   }
 
   #clicka{
