@@ -1,3 +1,9 @@
+#navbar{
+  height: 10%;
+  padding-left: 2vw;
+
+}
+
 .footer {
     position: inherit;
     margin-top: -150px; /* negative value of footer height */
