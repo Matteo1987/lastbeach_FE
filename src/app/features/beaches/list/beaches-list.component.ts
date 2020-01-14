@@ -40,10 +40,10 @@ export class BeachesListComponent implements OnInit {
     private router: Router
   ) {
     this.orientationForm = this.formBuilder.group({
-      Nord: [true],
-      Sud: [true],
-      Est: [true],
-      Ovest: [true]
+      Nord: [false],
+      Sud: [false],
+      Est: [false],
+      Ovest: [false]
     });
     this.servicesForm = this.formBuilder.group({
       park: [false],
@@ -80,8 +80,8 @@ export class BeachesListComponent implements OnInit {
   }
  
 
-  setFilters = () => {
-    this.mainFilter = this.route.snapshot.queryParams.filter;
+  setFilters = () => {  // setta i valori dei filtri in base al parametro dei queryParams (home)
+    this.mainFilter = this.route.snapshot.queryParams.filter; //mainfilter: il gruppo di filtri route snapshot: insieme caratteristiche route
     if (this.mainFilter) {
       let filterType = null;
       switch (this.mainFilter) {
@@ -104,13 +104,13 @@ export class BeachesListComponent implements OnInit {
         case 'reset': {
           filterType = this.beachFilters.reset;
           break;
-        }
       }
+    }
 
       if (filterType) {
-        let services = { ...this.servicesForm.value };
+        let services = { ...this.servicesForm.value }; //cloni i servicesForm all'interno di services
         Object.keys(services).forEach(function (item) {
-          if (filterType.hasOwnProperty(item) && filterType[item]) {
+          if (filterType.hasOwnProperty(item) && filterType[item]) { //hop vede se l'oggetto ha l'attributo and == true
             services[item] = true;
           }
           else {
@@ -118,13 +118,16 @@ export class BeachesListComponent implements OnInit {
           }
         });
 
-        this.servicesForm.patchValue(services);
+        this.servicesForm.patchValue(services); //patchValue è il metodo per cambiare l'oggetto serviceForm tramite variabile services
 
         if (filterType.hasOwnProperty('summer_crowding') && filterType.summer_crowding) {
           this.crowdForm.patchValue({ summer_crowding: true });
         }
+
       }
+
     }
+
   }
 
   loadComponent = () => {
@@ -209,17 +212,17 @@ export class BeachesListComponent implements OnInit {
     }
   }
 
-  filterBeaches = () => {
+  filterBeaches = () => {    //metodo che applica tutti i filtri selezionati (home e a mano)
     // const beaches: Array<Beach> = [];
-    const orientation = this.orientationForm.value;
+    //const orientation = this.orientationForm.value;
 
     this.loaded = false;
 
     let services = { ...this.servicesForm.value };
-    let servicesFilter = [];
+    let servicesFilter = []; //array di  filtri abilitati (home e a mano)
 
-    servicesFilter = Object.keys(services).filter(function (item) {
-      return (services[item]);
+    servicesFilter = Object.keys(services).filter(function (item) { //filter: filtra array in base alla condizione di return (no return c )
+      return (services[item]); 
     });
     this.filteredBeaches = this.getFilteredBeaches(this.beaches, servicesFilter);
 
@@ -233,11 +236,21 @@ export class BeachesListComponent implements OnInit {
     this.filteredBeaches = this.getFilteredBeaches(this.filteredBeaches, zoneFilter);
     // this.formatBeaches(this.filteredBeaches);
 
+    let orientation = { ...this.orientationForm.value };
+    let orientationFilter = [];
+
+    orientationFilter = Object.keys(orientation).filter(function (item) {
+      return (orientation[item]);
+    });
+    this.filteredBeaches = this.getFilteredBeaches(this.filteredBeaches, orientationFilter);
+
+
+
     let crowd = { ...this.crowdForm.value };
 
-    if (crowd.non_affollata) {
+    if (crowd.affollata) {
       this.filteredBeaches = this.filteredBeaches.filter(beach => {
-        return (beach.summer_crowding != crowd.non_affollata);
+        return (beach.summer_crowding == crowd.affollata);
       });
     }
 
@@ -269,10 +282,10 @@ export class BeachesListComponent implements OnInit {
     // this.formatBeaches(this.filteredBeaches);
   };
 
-  getFilteredBeaches(filteredBeaches, filterList) {
+  getFilteredBeaches(beaches, filterList) {
 
     if (filterList && filterList.length > 0) {
-      return filteredBeaches = filteredBeaches.filter(beach => {
+      return beaches.filter(beach => {
         let beachOk = false;
         for (let item of filterList) {
          
@@ -284,13 +297,19 @@ export class BeachesListComponent implements OnInit {
             beachOk = false;
 
             break;
-          }    
+          }
+         
         }
         return beachOk;
       });
     }
     else {
-      return filteredBeaches;
+      return beaches;
     }
+
+
   }
+
+
 }
+
