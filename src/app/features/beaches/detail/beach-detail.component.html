@@ -10,7 +10,6 @@
           <a [routerLink]="['../../list']" class="mr-3">
             <i class="fas fa-arrow-left" aria-hidden="true"></i>
           </a>
-
           {{ beach.name }} - {{ beach.city }} ({{ beach.province }})</h2>
 
           <!--Copertina Card immagine spiaggia dinamica -->
@@ -25,14 +24,13 @@
 
           <!--colonna info spiaggia -->
           <div class="col mx-5 mt-5 px-5">
-            <div class="row mt-4"><b>Meteo</b><img class="weather-icon ml-2" [src]="beach.weatherIcon"/></div>
+            <div class="row mt-4"><b>Meteo</b><img class="weather-icon ml-3" [src]="beach.weatherIcon"/></div>
 <!--            <div class="mb-3"><b class="mr-2">Traffico</b>-->
 <!--              <div class="rounded-circle d-inline-block {{getTrafficClass(beach.traffic)}}"><p>{{beach.traffic}}</p></div>-->
 <!--            </div>-->
-            <div class="row mt-3"><b>Orientamento : </b>{{ beach.orientation }}</div>
-            <div class="row mt-3"><b>Posizione (lat, long) : </b>{{beach.latitude}}, {{beach.longitude}}</div>
-          
-          <div class="row mt-3" ><b>Tipo di spiaggia : </b>{{getBeachType(beach.beach_type)}}</div>
+            <div class="row mt-3"><b>Orientamento &nbsp;:&nbsp;&nbsp;</b>{{ beach.orientation }}</div>
+            <div class="row mt-3"><b>Posizione (lat, long) &nbsp;: &nbsp;&nbsp;</b>{{beach.latitude}}, {{beach.longitude}}</div>
+          <div class="row mt-3" ><b>Tipo di spiaggia &nbsp;: &nbsp;&nbsp;</b>{{getBeachType(beach.beach_type)}}</div>
           </div>
 
           <!--Colonna Mappe, col-7 occupa 7 colonne su 12, padding e margin -->
@@ -40,7 +38,10 @@
 
             <!--Toggle Button per switch tra mappe -->
             <p class="text-right">
-              <button class="btn btn-primary mr-2" type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2">Indicazioni Stradali</button>
+              <button class="btn btn-primary mr-2" type="button" data-toggle="collapse" data-target=".multi-collapse" 
+              aria-expanded="false" id="mapSwitch"aria-controls="multiCollapseExample1 multiCollapseExample2">
+              Indicazioni Stradali
+              </button>
             </p>
 
             <!--Mappa OSM, valore show default -->

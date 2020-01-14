@@ -147,7 +147,7 @@ export class BeachDetailComponent implements OnInit {
   getInfoClass = (value: boolean) => value ? 'fa-check-circle text-success' : 'fa-times-circle text-danger';
   getEnabledClass = (value: boolean) => value ? 'text-success' : '';
   getBeachType = (value:string) => this.beachtype[value];
-  getMapIframeSrc = () => this.sanitizer.bypassSecurityTrustResourceUrl(`https:www.google.com/maps/embed/v1/directions?key=AIzaSyDBl453JPQafg3ImRdNI01PYkxRrzVSDQw&origin=Cagliari+Italy&destination=${this.beach.latitude},${this.beach.longitude}`);
+  getMapIframeSrc = () => this.sanitizer.bypassSecurityTrustResourceUrl(`https:www.google.com/maps/embed/v1/directions?key=AIzaSyDBl453JPQafg3ImRdNI01PYkxRrzVSDQw&origin=current+position&destination=${this.beach.latitude},${this.beach.longitude}`);
   
   }
 
