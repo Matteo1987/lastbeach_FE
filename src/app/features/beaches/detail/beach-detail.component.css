@@ -84,3 +84,10 @@ img{
 .cropped {
   object-fit: cover;
 }
+.fas {
+  color: darkcyan;
+}
+.fab {
+  color: darkcyan;
+}
+

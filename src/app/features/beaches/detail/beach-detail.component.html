@@ -7,11 +7,10 @@
         <h2 class="my-3">
 
           <!--Icona Arrow -->
-          <a [routerLink]="['../../list']" class="mr-3 ml-3">
-            <span style="color: darkcyan;">
+          <a [routerLink]="['../../list']" class="mr-3">
             <i class="fas fa-arrow-left" aria-hidden="true"></i>
-            </span>
           </a>
+
           {{ beach.name }} - {{ beach.city }} ({{ beach.province }})</h2>
 
           <!--Copertina Card immagine spiaggia dinamica -->
@@ -26,13 +25,14 @@
 
           <!--colonna info spiaggia -->
           <div class="col mx-5 mt-5 px-5">
-            <div class="row mt-4"><b>Meteo</b><img class="weather-icon ml-3" [src]="beach.weatherIcon"/></div>
-<!--            <div class="mb-3"><b class="mr-2">Traffico</b>-->
+            <div class="row mt-4"><b>Meteo</b><img class="weather-icon ml-2" [src]="beach.weatherIcon"/></div>
+<!--            <div class="mb-3"><b class="mr-3">Traffico</b>-->
 <!--              <div class="rounded-circle d-inline-block {{getTrafficClass(beach.traffic)}}"><p>{{beach.traffic}}</p></div>-->
 <!--            </div>-->
-            <div class="row mt-3"><b>Orientamento &nbsp;:&nbsp;&nbsp;</b>{{ beach.orientation }}</div>
-            <div class="row mt-3"><b>Posizione (lat, long) &nbsp;: &nbsp;&nbsp;</b>{{beach.latitude}}, {{beach.longitude}}</div>
-          <div class="row mt-3" ><b>Tipo di spiaggia &nbsp;: &nbsp;&nbsp;</b>{{getBeachType(beach.beach_type)}}</div>
+            <div class="row mt-3"><b>Orientamento : </b>{{ beach.orientation }}</div>
+            <div class="row mt-3"><b>Posizione (lat, long) : </b>{{beach.latitude}}, {{beach.longitude}}</div>
+          
+          <div class="row mt-3" ><b>Tipo di spiaggia : </b>{{getBeachType(beach.beach_type)}}</div>
           </div>
 
           <!--Colonna Mappe, col-7 occupa 7 colonne su 12, padding e margin -->
@@ -40,10 +40,7 @@
 
             <!--Toggle Button per switch tra mappe -->
             <p class="text-right">
-              <button class="btn btn-info mr-2" type="button" data-toggle="collapse" data-target=".multi-collapse" 
-              aria-expanded="false" id="mapSwitch"aria-controls="multiCollapseExample1 multiCollapseExample2">
-              Indicazioni Stradali
-              </button>
+              <button class="btn btn-primary mr-3" type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2">Indicazioni Stradali</button>
             </p>
 
             <!--Mappa OSM, valore show default -->
@@ -51,7 +48,7 @@
               <div class="mr-2">
                 <div id="map" class="map shadow"></div>
                   <div class="text-right">
-                  <input id="goMap" class="btn btn-info mt-3" type="button" (click)="setCenter()" value="Riposiziona Mappa">
+                  <input id="goMap" class="btn btn-primary mt-3" type="button" (click)="setCenter()" value="Riposiziona Mappa">
                 </div>
               </div>
             </div>
@@ -88,80 +85,58 @@
           
            <!-- <span class="mr-2"><i class="mr-1 fas {{getInfoClass(beach.summer_crowding)}}"></i>Affollamento estivo</span> -->
             <!--span class="mr-2"><i class="mr-1 fas fa-dog {{getEnabledClass(beach.dogs_allowed)}}" title="{{beach.dogs_allowed ? 'Cani ammessi' : 'Cani non ammess'}}"></i>{{beach.dogs_allowed ? 'Cani ammessi' : 'Cani non ammessi'}}</!--span-->
-            <span class="mr-2">
-              <span class="mr-1 fa-stack fa-1x">
-                <i class="fas fa-dog fa-stack-2x {{getEnabledClass(beach.dogs_allowed)}}" title="{{beach.dogs_allowed ? 'Cani ammessi' : 'Cani non ammessi'}}"></i>
-                <i class="fas fa-ban fa-stack-2x text-danger" *ngIf="!beach.dogs_allowed" title="{{beach.dogs_allowed ? 'Cani ammessi' : 'Cani non ammessi'}}"></i>
-              </span> 
+            <span class="mr-3" *ngIf="beach.dogs_allowed">
+                <i class="fas fa-dog fa-2x" title="Cani ammessi"></i>
             </span>
-            <span class="mr-2">
-              <span class="mr-1 fa-stack fa-1x">
-                <i class="fas fa-medkit fa-stack-2x {{getEnabledClass(beach.first_aid)}}" title="{{beach.first_aid ? 'Kit primo soccorso presente' : 'Kit primo soccorso non presente'}}"></i>
-                <i class="fas fa-ban fa-stack-2x text-danger" *ngIf="!beach.first_aid" title="{{beach.first_aid ? 'Kit primo soccorso presente' : 'Kit primo soccorso non presente'}}"></i>
-              </span>
-            </span>
-            <span class="mr-2">
-              <span class="mr-1 fa-stack fa-1x">
-                <i class="fas fa-wifi fa-stack-2x {{getEnabledClass(beach.wifi)}}" title="{{beach.wifi ? 'Wi-Fi disponibile ' : 'Wi-Fi non disponibile'}}"></i>
-                <i class="fas fa-ban fa-stack-2x text-danger" *ngIf="!beach.wifi" title="{{beach.wifi ? 'Wi-Fi disponibile' : 'Wi-Fi non disponibile'}}"></i>
-              </span>
-            </span>
-            <span class="mr-2">
-              <span class="mr-1 fa-stack fa-1x">
-                <i class="fas fa-parking fa-stack-2x {{getEnabledClass(beach.park)}}" title="{{beach.park ? 'Parcheggio custodito presente' : 'Assenza parcheggio custodito'}}"></i>
-                <i class="fas fa-ban fa-stack-2x text-danger" *ngIf="!beach.park" title="{{beach.park ? 'Parcheggio custodito presente' : 'Assenza parcheggio custodito'}}"></i>
-              </span> 
-            </span>
-            <span class="mr-2">
-              <span class="mr-1 fa-stack fa-1x">
-                <i class="fab fa-accessible-icon fa-stack-2x {{getEnabledClass(beach.disabled_access)}}" title="{{beach.disabled_access? 'Pedana per accesso in spiaggia ai diversamenti abili' : 'Assenza pedana per accesso in spiaggia ai diversamenti abili'}}"></i>
-                <i class="fas fa-ban fa-stack-2x text-danger" *ngIf="!beach.disabled_access" title="{{beach.disabled_access ? 'Pedana per accesso in spiaggia ai diversamenti abili' : 'Assenza pedana per accesso in spiaggia ai diversamenti abili'}}"></i>
-              </span> 
-            </span>
-            <span class="mr-2">
-              <span class="mr-1 fa-stack fa-1x">
-                <i class="fas fa-utensils fa-stack-2x {{getEnabledClass(beach.food_service)}}" title="{{beach.food_service? 'Presenza di ristoranti' : 'Assenza di ristoranti'}}"></i>
-                <i class="fas fa-ban fa-stack-2x text-danger" *ngIf="!beach.food_service" title="{{beach.food_service ? 'Presenza di ristoranti' : 'Assenza di ristoranti'}}"></i>
-              </span> 
-              </span>
-              <span class="mr-2">
-                <span class="mr-1 fa-stack fa-1x">
-                  <i class="fas fa-life-ring  fa-stack-2x {{getEnabledClass(beach.lifeguard)}}" title="{{beach.lifeguard? 'Servizio di salvataggio in mare' : 'Assenza di bagnino'}}"></i>
-                  <i class="fas fa-ban fa-stack-2x text-danger" *ngIf="!beach.lifeguard" title="{{beach.lifeguard ? 'Servizio di salvataggio in mare' : 'Assenza di bagnino'}}"></i>
-                </span> 
+            <span class="mr-3" *ngIf="beach.first_aid">
+                <i class="fas fa-medkit fa-2x"  title="Kit primo soccorso presente"></i>
                 </span>
-                <span class="mr-2">
-                <span class="mr-1 fa-stack fa-1x">
-                  <i class= "fas fa-store-alt fa-stack-2x {{getEnabledClass(beach.tobacconist)}}" title="{{beach. tobacconist? 'Negozio di merchandising e tabacchi' : 'Nessun negozio di merchandising e tabacchi'}}"></i>
-                  <i class="fas fa-ban fa-stack-2x text-danger" *ngIf="!beach. tobacconist" title="{{beach. tobacconist ? 'Negozio di merchandising e tabacchi' : 'Nessun negozio di merchandising e tabacchi'}}"></i>
-                </span> 
+            <span class="mr-3" *ngIf="beach.wifi">
+              <i class="fas fa-wifi fa-2x" title="Wi-Fi disponibile"></i>
               </span>
-              <span class="mr-2">
-                <span class="mr-1 fa-stack fa-1x">
-                  <i class="fas fa-users fa-stack-2x {{getEnabledClass(beach.summer_crowding)}}" title="{{beach.summer_crowding? 'Spaggia affollata' : 'Spaggia affollata'}}"></i>
-                  <i class="fas fa-ban fa-stack-2x text-danger" *ngIf="!beach.summer_crowding" title="{{beach.summer_crowding ? 'Spaggia affollata' : 'Spaggia non affollata'}}"></i>
-                </span> 
+            <span class="mr-3" *ngIf="beach.park">
+               <i class="fas fa-parking fa-2x" title="Parcheggio custodito" ></i>
               </span>
-              <span class="mr-2">
-                <span class="mr-1 fa-stack fa-1x">
-                  <i class="fas fa-umbrella-beach fa-stack-2x {{getEnabledClass(beach.sunbed_umbrella)}}" title="{{beach.sunbed_umbrella? 'Possibilità di affittare ombrelloni e lettini' : 'Non è possibile affittare ombrelloni e lettini'}}"></i>
-                  <i class="fas fa-ban fa-stack-2x text-danger" *ngIf="!beach.sunbed_umbrella" title="{{beach.sunbed_umbrella ? 'Possibilità di affittare ombrelloni e lettini' : 'Non è possibile affittare ombrelloni e lettini'}}"></i>
-                </span> 
-              </span>
-              <span class="mr-2">
-                <span class="mr-1 fa-stack fa-1x">
-                  <i class="fas fa-toilet fa-stack-2x {{getEnabledClass(beach.toilet)}}" title="{{beach.toilet? 'Servizi igienici gratuiti' : 'Assenza servizi igienici gratuiti'}}"></i>
-                  <i class="fas fa-ban fa-stack-2x text-danger" *ngIf="!beach.toilet" title="{{beach.toilet ? 'Servizi igienici gratuiti' : 'Assenza servizi igienici gratuiti'}}"></i>
-                </span> 
-              </span>
-             
-              <span class="mr-2">
-              <span class="mr-1 fa-stack fa-1x">
-                <i class="fas fa-shower fa-stack-2x {{getEnabledClass(beach.showers)}}" title="{{beach.showers? 'Presenza docce calde/fredde' : 'Assenza docce'}}"></i>
-                <i class="fas fa-ban fa-stack-2x text-danger" *ngIf="!beach.showers" title="{{beach.showers ? 'Presenza docce calde/fredde' : 'Assenza docce'}}"></i>
-              </span> 
+            <span class="mr-3" *ngIf="beach.disabled_access">
+                <i class="fab fa-accessible-icon fa-2x" title="Pedana per accesso in spiaggia ai diversamenti abili"></i>
             </span>
-      </div>
+            <span class="mr-3" *ngIf="beach.food_service">
+             <i class="fas fa-utensils fa-2x" title="Presenza di ristoranti e snack bar"></i>
+               </span>
+              <span class="mr-3" *ngIf="beach.lifeguard">
+                 <i class="fas fa-life-ring  fa-2x" title="Servizio di salvataggio in mare"></i>
+                </span>
+                <span class="mr-3" *ngIf="beach.tobacconist">
+                  <i class= "fas fa-store-alt fa-2x" title="Negozio di merchandising e tabacchi"></i>
+              </span>
+              <span class="mr-3" *ngIf="beach.summer_crowding">
+                  <i class="fas fa-users fa-2x " title="Spaggia affollata"></i>
+              </span>
+              <span class="mr-3" *ngIf="beach.sunbed_umbrella">
+                  <i class="fas fa-umbrella-beach fa-2x" title="Possibilità di affittare ombrelloni e lettini"></i>
+                </span> 
+              <span class="mr-3" *ngIf="beach.toilet">
+                  <i class="fas fa-restroom fa-2x " title="Servizi igienici gratuiti"></i>
+                </span>
+             
+              <span class="mr-3" *ngIf="beach.showers">
+                <i class="fas fa-shower fa-2x" title="Presenza docce calde/fredde"></i>
+              </span> 
+              <span class="mr-3" *ngIf="beach.snorkeling_diving">
+                <i class="fas fa-fish fa-2x" title="Possibilità di praticare immersioni subacquee"></i>
+              </span> 
+              <span class="mr-3" *ngIf="beach.kayak">
+                <i class="fas fa-water fa-2x" title="Possibilità di noleggio kayak e canoe"></i>
+              </span> 
+              <span class="mr-3" *ngIf="beach.discoteque">
+                <i class="fas fa-cocktail fa-2x" title="Discoteca e cocktail bar al tramonto"></i>
+              </span> 
+              <span class="mr-3" *ngIf="beach.baby_parking">
+                <i class="fas fa-baby fa-2x" title="Baby parking e animazione per bambini"></i>
+              </span>
+            </div>
+          
+        
     </div>  
 
       <!--Card footer con button "Suggerisci Modifica" -->
