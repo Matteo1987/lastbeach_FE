@@ -7,8 +7,10 @@
         <h2 class="my-3">
 
           <!--Icona Arrow -->
-          <a [routerLink]="['../../list']" class="mr-3">
+          <a [routerLink]="['../../list']" class="mr-3 ml-3">
+            <span style="color: darkcyan;">
             <i class="fas fa-arrow-left" aria-hidden="true"></i>
+            </span>
           </a>
           {{ beach.name }} - {{ beach.city }} ({{ beach.province }})</h2>
 
@@ -38,7 +40,7 @@
 
             <!--Toggle Button per switch tra mappe -->
             <p class="text-right">
-              <button class="btn btn-primary mr-2" type="button" data-toggle="collapse" data-target=".multi-collapse" 
+              <button class="btn btn-info mr-2" type="button" data-toggle="collapse" data-target=".multi-collapse" 
               aria-expanded="false" id="mapSwitch"aria-controls="multiCollapseExample1 multiCollapseExample2">
               Indicazioni Stradali
               </button>
@@ -49,7 +51,7 @@
               <div class="mr-2">
                 <div id="map" class="map shadow"></div>
                   <div class="text-right">
-                  <input id="goMap" class="btn btn-primary mt-3" type="button" (click)="setCenter()" value="Riposiziona Mappa">
+                  <input id="goMap" class="btn btn-info mt-3" type="button" (click)="setCenter()" value="Riposiziona Mappa">
                 </div>
               </div>
             </div>

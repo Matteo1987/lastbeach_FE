@@ -99,6 +99,18 @@ h2{
     margin: -75px 0 0 -100px;
 }
 
+#bestBeaches{
+  background-color: rgba(0,0,0,.3);
+  left: 0;
+    line-height: 200px;
+    margin-top: -100px;
+    margin-left: 20vw;
+    position: absolute;
+    text-align: center;
+    top: 40%;
+    width: 60%;
+}
+
 #image {
   background: url(https://it.sailsquare.com/blog/app/uploads/sites/3/2017/04/Cala-Coticcio-Caprera-1-e1492522465771-2400x1056.jpg) no-repeat;
   height: 500px;
@@ -108,17 +120,6 @@ h2{
   color: white;
   background-attachment: fixed;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 div.menu {
   border-right: 3px solid #ddd;
@@ -189,7 +190,6 @@ div.filters div.accordion div.card-body .form-check {
   margin-left: 1rem;
 }
 div.filters div.accordion div.card-body .form-check input[type='checkbox'] {
-  -webkit-appearance: none;
   width: 20px;
   height: 20px;
   background: white;
@@ -203,15 +203,3 @@ div.filters div.accordion div.card-body .form-check input[type='checkbox']:check
 div.filters div.accordion div.card-body .form-check label {
   margin-left: 0.5rem;
 }
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,5 +1,7 @@
 <div id="image">
-  <h1>Le Migliori Spiagge</h1>
+  <h1 class="px-auto mx-auto">
+    <p id="bestBeaches" style="font-size: 50px;">Le Migliori Spiagge</p>
+  </h1>
 </div>
 
 <!--Container Principale con margin, padding e shadow. CSS inline per trasparenza -->
@@ -17,7 +19,7 @@
 
       <div class="tag-list p-2">
         <ng-container *ngFor="let tag of tags">
-          <span class="badge badge-light m-1">{{tag}}</span>
+          <span class="badge badge-light m-1" style="cursor:pointer">{{tag}}</span>
         </ng-container>
       </div>
       <div class="filters mt-4">
