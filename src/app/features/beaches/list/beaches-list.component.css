@@ -39,16 +39,6 @@ div .rounded-circle p {
   background-color: white;
 }
 
-.background{
-height: 250px;
-background-color: white;
-background: url(https://siviaggia.files.wordpress.com/2016/07/chia-sardegna-mare-piu-bello-guida-blu-t.jpg) no-repeat;
-
-background-size: cover;
-background-attachment: fixed;
-background-position: center;
-}
-
 #newButton{
   float: left;
   margin-top: 13px;
@@ -100,25 +90,26 @@ h2{
 }
 
 #bestBeaches{
-  background-color: rgba(0,0,0,.3);
-  left: 0;
+    background-color: rgba(0,0,0,.3);
+    left: 0;
     line-height: 200px;
     margin-top: -100px;
     margin-left: 20vw;
     position: absolute;
     text-align: center;
-    top: 40%;
+    top: 30%;
     width: 60%;
 }
 
 #image {
-  background: url(https://it.sailsquare.com/blog/app/uploads/sites/3/2017/04/Cala-Coticcio-Caprera-1-e1492522465771-2400x1056.jpg) no-repeat;
-  height: 500px;
+  background: url(http://live.coast.style/appadmin/public/foto/20180226174911/Cala-Coticcio-Caprera-Spiaggia-Beach-PortoCervo-Costa-Smeralda-Sardegna-Sardinia-Coast-CoastStyle-MC.jpg);
+  height: 550px;
+  margin-top: -10px;
   width: 100%;
-  text-align: center;
-  padding-top: 250px;
   color: white;
   background-attachment: fixed;
+  background-position: bottom;
+  background-size: cover;
 }
 
 div.menu {
