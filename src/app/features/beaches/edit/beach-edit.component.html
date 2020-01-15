@@ -55,7 +55,7 @@
           [submitted]="submitted" invalidFeedback="Campo richiesto">
         </app-form-input>
 
-        <div class="form-group col-md-5 text-right" style="margin-top: 2rem;">
+        <div class="form-group col-md-4 text-right" style="margin-top: 2rem;">
           <div class="btn btn-outline-info cursor-pointer" (click)="previewPhoto(beachForm.value.photo)">Anteprima</div>
           <div class="btn btn-outline-danger cursor-pointer ml-2" (click)="previewPhoto(null)">Nascondi</div>
         </div>
@@ -74,6 +74,8 @@
         <app-form-input-checkbox [group]="beachForm" class="form-check col-md-4 ml-4" attributeName="park"
                                  label="Parcheggio">
         </app-form-input-checkbox>
+        
+
 
         <app-form-input-checkbox [group]="beachForm" class="form-check col-md-4 ml-4" attributeName="food_service"
                                  label="Ristorazione">
@@ -111,8 +113,33 @@
         <app-form-input-checkbox [group]="beachForm" class="form-check col-md-4 ml-4" attributeName="showers"
         label="Docce fredde e/o calde">
         </app-form-input-checkbox>
+        <app-form-input-checkbox [group]="beachForm" class="form-check col-md-4 ml-4" attributeName="snorkeling_diving"
+        label="Possibilità di immersioni">
+        </app-form-input-checkbox>
+        <app-form-input-checkbox [group]="beachForm" class="form-check col-md-4 ml-4" attributeName="kayak"
+        label="Noleggio kayak e canoe">
+        </app-form-input-checkbox>
+        <app-form-input-checkbox [group]="beachForm" class="form-check col-md-4 ml-4" attributeName="discoteque"
+        label="Discoteca e cocktail bar al tramonto">
+        </app-form-input-checkbox>
+        <app-form-input-checkbox [group]="beachForm" class="form-check col-md-4 ml-4" attributeName="baby_parking"
+        label="Baby parking e animazione per bambini">
+        </app-form-input-checkbox>
+        <app-form-input-checkbox [group]="beachForm" class="form-check col-md-4 ml-4" attributeName="costa_nord"
+        label="Costa Nord">
+        </app-form-input-checkbox>
+        <app-form-input-checkbox [group]="beachForm" class="form-check col-md-4 ml-4" attributeName="costa_sud"
+        label="Costa Sud">
+        </app-form-input-checkbox>
+        <app-form-input-checkbox [group]="beachForm" class="form-check col-md-4 ml-4" attributeName="costa_est"
+        label="Costa Est">
+        </app-form-input-checkbox>
+        <app-form-input-checkbox [group]="beachForm" class="form-check col-md-4 ml-4" attributeName="costa_ovest"
+                                 label="Costa Ovest">
+        </app-form-input-checkbox>
+     
         
-        <!-- <div class="form-check col-md-6 ">
+        <!-- <div class="form-check col-md-4 ">
           <input class="form-check-input" type="checkbox" formControlName="summer_crowding" id="summer_crowding">
           <label class="form-check-label" for="summer_crowding">Affollamento estivo</label>
         </div> -->

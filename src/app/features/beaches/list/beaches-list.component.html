@@ -211,20 +211,20 @@
               <div class="card-body">
                 <form [formGroup]="zoneForm">
                   <div class="form-check form-check-group">
-                    <input id="checkbox-costa-nord" formControlName="costa_nord" type="checkbox" (change)="filterBeaches()">
-                    <label for="checkbox-costa-nord">Nord</label>
+                    <input id="radio-costa-nord" formControlName="costa" name="costa" type="radio" value="costa_nord" (change)="filterBeaches()">
+                    <label for="radio-costa-nord">Nord</label>
                   </div>
                   <div class="form-check form-check-group">
-                    <input id="checkbox-costa-ovest" formControlName="costa_ovest" type="checkbox" (change)="filterBeaches()">
-                    <label for="checkbox-costa-ovest">Ovest</label>
+                    <input id="radio-costa-ovest" formControlName="costa" name="costa" type="radio" value="costa_ovest"(change)="filterBeaches()">
+                    <label for="radio-costa-ovest">Ovest</label>
                   </div>
                   <div class="form-check form-check-group">
-                    <input id="checkbox-costa-est" formControlName="costa_est" type="checkbox" (change)="filterBeaches()">
-                    <label for="checkbox-costa-est">Est</label>
+                    <input id="radio-costa-est" formControlName="costa" name="costa" type="radio" value="costa_est" (change)="filterBeaches()">
+                    <label for="radio-costa-est">Est</label>
                   </div>
                   <div class="form-check form-check-group">
-                    <input id="checkbox-costa-sud" formControlName="costa_sud" type="checkbox" (change)="filterBeaches()">
-                    <label for="checkbox-costa-sud">Sud</label>
+                    <input id="radio-costa-sud" formControlName="costa" name="costa"type="radio" value="costa_sud" (change)="filterBeaches()">
+                    <label for="radio-costa-sud">Sud</label>
                   </div>
 
                 </form>

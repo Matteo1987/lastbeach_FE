@@ -234,7 +234,7 @@ export class BeachesListComponent implements OnInit {
       return (zone[item]);
     });
     this.filteredBeaches = this.getFilteredBeaches(this.filteredBeaches, zoneFilter);
-    // this.formatBeaches(this.filteredBeaches);
+    // // this.formatBeaches(this.filteredBeaches);
 
     let orientation = { ...this.orientationForm.value };
     let orientationFilter = [];
