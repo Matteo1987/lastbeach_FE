@@ -25,14 +25,14 @@
 
           <!--colonna info spiaggia -->
           <div class="col mx-5 mt-5 px-5">
-            <div class="row mt-4"><b>Meteo</b><img class="weather-icon ml-2" [src]="beach.weatherIcon"/></div>
+            <div class="row"><b class="mt-3 mr-2">Meteo</b><img class="weather-icon ml-2" [src]="beach.weatherIcon"/></div>
 <!--            <div class="mb-3"><b class="mr-3">Traffico</b>-->
 <!--              <div class="rounded-circle d-inline-block {{getTrafficClass(beach.traffic)}}"><p>{{beach.traffic}}</p></div>-->
 <!--            </div>-->
-            <div class="row mt-3"><b>Orientamento : </b>{{ beach.orientation }}</div>
-            <div class="row mt-3"><b>Posizione (lat, long) : </b>{{beach.latitude}}, {{beach.longitude}}</div>
+            <div class="row mt-3"><b>Orientamento : &nbsp; &nbsp; </b>{{ beach.orientation }}</div>
+            <div class="row mt-3"><b>Posizione (lat, long) : &nbsp; &nbsp; </b>{{beach.latitude}}, {{beach.longitude}}</div>
           
-          <div class="row mt-3" ><b>Tipo di spiaggia : </b>{{getBeachType(beach.beach_type)}}</div>
+          <div class="row mt-3" ><b>Tipo di spiaggia : &nbsp; &nbsp; </b>{{getBeachType(beach.beach_type)}}</div>
           </div>
 
           <!--Colonna Mappe, col-7 occupa 7 colonne su 12, padding e margin -->

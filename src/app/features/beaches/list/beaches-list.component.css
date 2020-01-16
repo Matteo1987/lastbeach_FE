@@ -93,7 +93,6 @@ h2{
     background-color: rgba(0,0,0,.3);
     left: 0;
     line-height: 200px;
-    margin-top: -100px;
     margin-left: 20vw;
     position: absolute;
     text-align: center;
@@ -103,7 +102,7 @@ h2{
 
 #image {
   background: url(http://live.coast.style/appadmin/public/foto/20180226174911/Cala-Coticcio-Caprera-Spiaggia-Beach-PortoCervo-Costa-Smeralda-Sardegna-Sardinia-Coast-CoastStyle-MC.jpg);
-  height: 550px;
+  height: 30rem;
   margin-top: -10px;
   width: 100%;
   color: white;

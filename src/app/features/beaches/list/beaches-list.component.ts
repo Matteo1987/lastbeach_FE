@@ -25,6 +25,8 @@ export class BeachesListComponent implements OnInit {
   crowdForm: FormGroup;
   zoneForm: FormGroup;
   tags: Array<String> = ['Relax', 'Avventura', 'Pedalò', 'Famiglia', 'Kayak', 'Ristorante', 'Cani ammessi'];
+  meteo: Beach;
+  temp : number;
 
   radioValue = 'park';
   loaded = false;
@@ -77,8 +79,26 @@ export class BeachesListComponent implements OnInit {
   ngOnInit() {
     this.setFilters();
     this.loadComponent();
+    this.currentMeteo();
   }
  
+  currentMeteo() {
+    this.meteo.city = "Cagliari";
+    this.meteo.latitude = 40;
+    this.meteo.longitude = 9;
+    this.getMeteo(this.meteo);
+  }
+
+  getMeteo = (meteo: Beach) => {
+    this.weatherService.getCurrent(meteo.city, meteo.latitude, meteo.longitude)
+      .subscribe((weather: CurrentWeather) => {
+        this.temp = weather.data[0].temp
+        meteo.weatherIcon = this.getWeatherIconPath(weather.data[0].weather.icon);
+        meteo.weather = weather;
+      }, err => {
+        console.error(err);
+      });
+  };
 
   setFilters = () => {  // setta i valori dei filtri in base al parametro dei queryParams (home)
     this.mainFilter = this.route.snapshot.queryParams.filter; //mainfilter: il gruppo di filtri route snapshot: insieme caratteristiche route

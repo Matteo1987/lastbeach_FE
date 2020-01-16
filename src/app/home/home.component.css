@@ -28,10 +28,6 @@ h3{
   text-shadow: 0.5px 0.5px 5px rgb(43, 41, 41);
 }
 
-#textContainer{
-  padding-top: 10%;
-}
-
 .esplora {
 color: #e7e7d3;
 }
@@ -42,16 +38,23 @@ color: #e7e7d3;
 
 #beachadvisor{
     color: white;
-    font-size: 700%;
+    font-size: 7vw;
     text-align: center;
-    padding-top: 10px;
+    padding-top: 7vw;
     text-shadow: 0.5px 0.5px 5px rgb(43, 41, 41);
     font-weight: normal;
   }
 
+  
+  #clicka{
+    color: white;
+    font-size: 3vw;
+    text-align: center;
+    text-shadow: 0.5px 0.5px 5px rgb(43, 41, 41);
+  }
  
   button{
-    font-size: 30px;
+    font-size: 2vw;
     color: white;
     text-shadow: 0.5px 0.5px 5px rgb(43, 41, 41);
     border-color:white;
@@ -81,12 +84,5 @@ button:hover{
     padding-top: 5px;
   }
 
-  #clicka{
-    color: white;
-    font-size: 270%;
-    text-align: center;
-    text-shadow: 0.5px 0.5px 5px rgb(43, 41, 41);
-    
-  }
 
   

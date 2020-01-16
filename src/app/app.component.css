@@ -3,9 +3,9 @@
 }
 
 #navbar{
-  height: 8%;
+  height: 10vh;
+  min-height: 4rem;
   padding-left: 2vw;
-
 }
 
 .footer {
