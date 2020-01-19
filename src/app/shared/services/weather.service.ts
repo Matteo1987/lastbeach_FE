@@ -6,7 +6,7 @@ import {CurrentWeather, ForecastWeather} from '../models/Meteo';
 
 export class WeatherService {
   private baseUrl = 'https://api.weatherbit.io/v2.0';
-  private apiKey = '18544eaed91744f5acf49b25210695d7';
+  private apiKey = '4bac35b6ae394eef916d583250a87c1e';
 
   constructor(
     private http: HttpClient

@@ -9,7 +9,7 @@
  -o-background-size: cover;
  background-size: cover;
  background-attachment: initial;
-background-position: center;
+background-position: bottom;
  }
 
 h2{
@@ -44,13 +44,13 @@ color: #e7e7d3;
     text-shadow: 0.5px 0.5px 5px rgb(43, 41, 41);
     font-weight: normal;
   }
-
   
   #clicka{
     color: white;
     font-size: 3vw;
     text-align: center;
     text-shadow: 0.5px 0.5px 5px rgb(43, 41, 41);
+    font-style: italic;
   }
  
   button{
@@ -74,9 +74,6 @@ button:hover{
      font-size: 30px;
      text-shadow: 0.5px 0.5px 5px rgb(43, 41, 41);
 }
-
-
-  
 
   #typeBeaches{
     
