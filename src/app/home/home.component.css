@@ -62,12 +62,12 @@ color: #e7e7d3;
 button:hover{
   font-size: 40px;
   color: white;
-  text-shadow: 0.5px 0.5px 5px rgb(43, 41, 41);
-  background-color: rgb(117, 117, 117);
+  text-shadow: 0.5px 0.5px 5px rgb(14, 13, 13);
+  background-color: rgb(78, 135, 240);
   border-color: white;
   transition: 0.3s;
+  
 }
-
 
 
 #paragraph{
